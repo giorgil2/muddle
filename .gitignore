@@ -1,0 +1,8 @@
+.DS_Store
+coverage/*
+log/*.log
+script/log/*.log
+spec/models/log/*.log
+tmp/**/*
+couchdb.stderr
+couchdb.stdout
