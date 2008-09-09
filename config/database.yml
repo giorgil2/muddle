@@ -1,0 +1,26 @@
+development:
+  repositories:
+    default: couchdb://localhost:5984/muddle_dev
+    mysql:
+      adapter: mysql
+      database: muddle_dev
+      host: localhost
+      username: root
+
+test:
+  repositories:
+    default: couchdb://localhost:5984/muddle_test
+    mysql:
+      adapter: mysql
+      database: muddle_test
+      host: localhost
+      username: root
+
+production:
+  repositories:
+    default: couchdb://localhost:5984/muddle
+    mysql:
+      adapter: mysql
+      database: muddle
+      host: localhost
+      username: root

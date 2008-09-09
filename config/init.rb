@@ -1,3 +1,5 @@
+$KCODE = 'UTF8'
+
 #
 # ==== Structure of Merb initializer
 #
@@ -33,8 +35,6 @@
 # Remember that bundling of dependencies as gems with your application
 # makes it independent of the environment it runs in and is a very
 # good, encouraged practice to follow.
-Gem.clear_paths
-Gem.path.unshift(Merb.root / "gems")
 
 # If you want modules and classes from libraries organized like
 # merbapp/lib/magicwand/lib/magicwand.rb to autoload,
@@ -69,7 +69,7 @@ end
 # if you need a database.
 
 # Uncomment for DataMapper ORM
-# use_orm :datamapper
+use_orm :datamapper
 
 # Uncomment for ActiveRecord ORM
 # use_orm :activerecord
@@ -124,11 +124,12 @@ Merb::Config.use do |c|
   # c[:session_id_key] = '_session_id'
   
   # The session_secret_key is only required for the cookie session store.
-  c[:session_secret_key]  = 'b4701a401202caa1148702700f58393288db7b08'
+  c[:session_secret_key]  = '2ba11c91acaa954ea631293e48e2c515be15b4c0'
   
   # There are various options here, by default Merb comes with 'cookie', 
-  # 'memory' or 'memcached'.  You can of course use your favorite ORM 
-  # instead: 'datamapper', 'sequel' or 'activerecord'.
+  # 'memory', 'memcache' or 'container'.  
+  # You can of course use your favorite ORM instead: 
+  # 'datamapper', 'sequel' or 'activerecord'.
   c[:session_store] = 'cookie'
 end
 
@@ -136,22 +137,22 @@ end
 # ==== Tune your inflector
 
 # To fine tune your inflector use the word, singular_word and plural_word
-# methods of Language::English::Inflector module metaclass.
+# methods of English::Inflect module metaclass.
 #
 # Here we define erratum/errata exception case:
 #
-# Language::English::Inflector.word "erratum", "errata"
+# English::Inflect.word "erratum", "errata"
 #
 # In case singular and plural forms are the same omit
 # second argument on call:
 #
-# Language::English::Inflector.word 'information'
+# English::Inflect.word 'information'
 #
 # You can also define general, singularization and pluralization
 # rules:
 #
 # Once the following rule is defined:
-# Language::English::Inflector.rule 'y', 'ies'
+# English::Inflect.rule 'y', 'ies'
 #
 # You can see the following results:
 # irb> "fly".plural
@@ -161,14 +162,14 @@ end
 #
 # Example for singularization rule:
 #
-# Language::English::Inflector.singular_rule 'o', 'oes'
+# English::Inflect.singular_rule 'o', 'oes'
 #
 # Works like this:
 # irb> "heroes".singular
 # => hero
 #
 # Example of pluralization rule:
-# Language::English::Inflector.singular_rule 'fe', 'ves'
+# English::Inflect.singular_rule 'fe', 'ves'
 #
 # And the result is:
 # irb> "wife".plural

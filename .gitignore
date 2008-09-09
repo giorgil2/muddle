@@ -3,6 +3,7 @@ coverage/*
 log/*.log
 script/log/*.log
 spec/models/log/*.log
+test/*
 tmp/**/*
 couchdb.stderr
 couchdb.stdout
