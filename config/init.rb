@@ -43,6 +43,8 @@ $KCODE = 'UTF8'
 
 # ==== Dependencies
 
+require 'merb-assets'
+
 # These are some examples of how you might specify dependencies.
 # Dependency loading is delayed to a later Merb app
 # boot stage, but it may be important when
