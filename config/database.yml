@@ -1,9 +1,9 @@
 development:
   repositories:
-    default: couchdb://localhost:5984/muddle_dev
+    default: couchdb://localhost:5984/muddle_development
     mysql:
       adapter: mysql
-      database: muddle_dev
+      database: muddle_development
       host: localhost
       username: root
 

@@ -70,6 +70,9 @@ end
 
 # Uncomment for DataMapper ORM
 use_orm :datamapper
+require 'dm-timestamps'
+require 'dm-validations'
+
 
 # Uncomment for ActiveRecord ORM
 # use_orm :activerecord
