@@ -1,0 +1,15 @@
+<%- if post.title && !post.title.empty? -%>
+  <h1>
+    <%= post.title %>
+  </h1>
+<%- end -%>
+
+  <code>
+    <%= post.code %>
+  </code>
+  
+<%- if post.description && !post.description.empty? -%>
+  <p>
+    <%= post.description %>
+  </p>
+<%- end -%>

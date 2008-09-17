@@ -1,0 +1,19 @@
+<form action="<%= url(:post, @post) %>" method="post">
+  
+  <%- unless @post.errors.empty? -%>
+  <span class="warning">
+    <ul>    
+    <%- @post.errors.sort.each do |error| -%>
+      <li><%= error %></li>
+    <%- end -%>
+    </ul>
+  </span>
+  <%- end -%>
+  
+  <input type="hidden" value="put" name="_method"/>
+  
+  <%= partial "posts/edit/#{@post.post_type.name.downcase}", :with => @post, :as => :post %>
+  
+  <input type="submit" value="Update Post"/>
+  
+</form>

@@ -1,0 +1,8 @@
+    <li>
+      <%= partial "posts/show/#{post.post_type.name.downcase}", :with => post, :as => :post %>
+      <ul class="navigation">
+        <a href="<%= url(:post, post) %>"><li>show</li></a>
+        <a href="<%= url(:edit_post, post) %>"><li>edit</li></a>
+        <a href="<%= url(:delete_post, post) %>" method="delete" onclick="return confirm('Are you sure?');"><li>destroy</li></a>
+      </ul>
+    <li>

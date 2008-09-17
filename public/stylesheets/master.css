@@ -42,3 +42,49 @@ p.small {
 	line-height: 1.8em;
 	margin-bottom: 1.8em;
 }
+
+span.message, span.todo, span.warning {
+	border:2px solid #999999;
+	color:#666666;
+	display:block;
+	font-weight:bold;
+	margin:10px 10px;
+	padding:10px;
+	text-align:center;
+}
+
+span.message {
+	background-color:#FFFF99;
+}
+span.warning {
+	background-color:#FF9999;
+}
+span.warning ul {
+	margin-bottom:0;
+}
+span.warning ul li {
+	list-style:disc;
+}
+
+ul.navigation {
+	margin-bottom:10px;
+	padding:10px;
+}
+ul.navigation li {
+	display:inline;
+	padding:5px 0px;
+}
+ul.navigation li a {
+	background-color:#EEEEEE;
+	padding:5px;
+}
+ul.navigation li a:hover {
+	background-color:#CCCCCC;
+}
+
+label.optional {
+	color:#999999;
+}
+label.required {
+	color:#FF6666;
+}

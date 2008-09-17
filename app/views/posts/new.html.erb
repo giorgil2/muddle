@@ -1,0 +1,11 @@
+<form action="<%= url(:posts) %>" method="post">
+  <label for="post[post_type]" class="required">Post Type</label>
+  <select id="post[post_type]" name="post[post_type]">
+    <%- Post.descendants.each do |descendant| -%>
+      <option value="<%= descendant.name %>"><%= descendant.name %></option>
+    <%- end -%>
+  </select>
+  
+  <input type="submit" value="Create Post!">
+  
+</form>

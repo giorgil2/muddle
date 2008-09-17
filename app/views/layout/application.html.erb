@@ -8,6 +8,17 @@
     <%= css_include_tag 'reset-min', 'master' %>
   </head>
   <body>
+    <ul class="navigation">
+      <a href="<%= url(:posts) %>"><li>All Posts</li></a>
+      <a href="<%= url(:new_post) %>"><li>New Post</li></a>
+    </ul>
+
+    <%- unless message.empty? -%>
+    <span class="message">
+      <%= message %>
+    </span>
+    <%- end -%>
+    
     <%= catch_content :for_layout %>
   </body>
 </html>
