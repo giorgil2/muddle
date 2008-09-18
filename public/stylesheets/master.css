@@ -45,7 +45,7 @@ span.message, span.todo, span.warning {
 	margin: 0px auto;
 	padding: 10px;
 	text-align: center;
-	width: 256px;
+	width: 512px;
 }
 span.message {
 	background-color: #FFFF99;
@@ -90,7 +90,7 @@ form label.optional {
 	color:#999999;
 }
 form label.required {
-	color:#FF6666;
+	color:#CC6666;
 }
 form textarea {
 	height: 128px;
