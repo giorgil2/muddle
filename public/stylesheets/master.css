@@ -106,34 +106,34 @@ ul.posts li.post {
 	margin: 10px;
 	padding: 20px;
 }
-ul.posts li.post h1 {
-	text-align: left;
-}
-ul.posts li.post p {
+ul.posts li.post h1, ul.posts li.post p {
 	text-align: left;
 }
 
-ul.chat {
+ul.posts li.post ul.chat {
 	text-align: left;
 }
-ul.chat li.message {
+ul.posts li.post ul.chat li.message {
 	padding: 5px;
 }
-ul.chat li.message.even {
+ul.posts li.post ul.chat li.message.even {
 	background-color: #DDDDDD;
 }
-ul.chat li.message.odd {
+ul.posts li.post ul.chat li.message.odd {
 	background-color: #EEEEEE;
 }
 
 
-pre.code {
+ul.posts li.post pre.code {
 	background-color: #EEEEEE;
 	color: #000000;
 	padding: 20px;
 	text-align: left;
 }
 
-blockquote.quote {
-  text-align: left;	
+ul.posts li.post blockquote.quote {
+	text-align: left;
+}
+ul.posts li.post p.quote {
+	text-align: right;
 }
