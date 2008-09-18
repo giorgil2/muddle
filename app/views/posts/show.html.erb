@@ -1,1 +1,3 @@
-<%= partial "posts/show/#{@post.post_type.name.downcase}", :with => @post, :as => :post %>
+<ul class="posts">
+  <%= partial :post, :with => @post %>
+</ul>
