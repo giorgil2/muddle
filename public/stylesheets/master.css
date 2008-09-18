@@ -1,8 +1,8 @@
 body {
 	font-family: helvetica, arial, sans-serif;
-	font-size:12px;
-	line-height:1.5em;
-	text-align:center;
+	font-size: 12px;
+	line-height: 1.5em;
+	text-align: center;
 }
 
 h1 {
@@ -38,42 +38,42 @@ p.small {
 }
 
 span.message, span.todo, span.warning {
-	border:2px solid #999999;
-	color:#666666;
-	display:block;
-	font-weight:bold;
-	margin:10px 10px;
-	padding:10px;
-	text-align:center;
+	border: 2px solid #999999;
+	color: #666666;
+	display: block;
+	font-weight :bold;
+	margin: 10px 10px;
+	padding: 10px;
+	text-align: center;
+	width: 512px;
 }
-
 span.message {
-	background-color:#FFFF99;
+	background-color: #FFFF99;
 }
 span.warning {
-	background-color:#FF9999;
+	background-color: #FF9999;
 }
 span.warning ul {
-	margin-bottom:0;
+	margin-bottom: 0;
 }
 span.warning ul li {
-	list-style:disc;
+	list-style: disc;
 }
 
 ul.navigation {
-	margin-bottom:10px;
-	padding:10px;
+	margin-bottom: 10px;
+	padding: 10px;
 }
 ul.navigation li {
-	display:inline;
-	padding:5px 0px;
+	display: inline;
+	padding: 5px 0px;
 }
 ul.navigation li a {
-	background-color:#EEEEEE;
-	padding:5px;
+	background-color: #EEEEEE;
+	padding: 5px;
 }
 ul.navigation li a:hover {
-	background-color:#CCCCCC;
+	background-color: #CCCCCC;
 }
 
 form {
@@ -81,8 +81,9 @@ form {
 	margin: 0px auto;
 	width: 256px;
 }
-form input, form label, form textarea {
+form input, form label, form select, form textarea {
 	display: block;
+	margin: 20px;
 }
 form label.optional {
 	color:#999999;
@@ -90,9 +91,11 @@ form label.optional {
 form label.required {
 	color:#FF6666;
 }
+form input, form select, form textarea {
+	width: 256px;
+}
 form textarea {
 	height: 128px;
-	width: 256px;
 }
 
 ul.posts {
@@ -115,9 +118,8 @@ ul.posts li.post p {
 ul.chat {
 	text-align: left;
 }
-
 ul.chat li.message {
-	padding:5px;
+	padding: 5px;
 }
 ul.chat li.message.even {
 	background-color: #EEEEEE;
@@ -132,4 +134,8 @@ pre.code {
 	color: #000000;
 	padding: 20px;
 	text-align: left;
+}
+
+blockquote.quote {
+  text-align: left;	
 }

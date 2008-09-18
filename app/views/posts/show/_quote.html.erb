@@ -1,0 +1,9 @@
+  <blockquote class="quote">
+    "<%= post.quote%>"
+  </blockquote>
+
+<%- if post.source && !post.source.empty? -%>
+  <p>
+    &mdash; <%= post.source%>
+  </p>
+<%- end -%>
