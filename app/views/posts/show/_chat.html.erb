@@ -5,12 +5,12 @@
 <%- end -%>
 
   <ul class="chat">
-    <%- colors = [ '#CCCC66', '#CC66CC', '#66CCCC', '#CC6666', '#66CC66', '#6666CC' ] -%>
+    <%- colors = [ '#6666CC', '#66CC66', '#CC6666', '#66CCCC', '#CC66CC', '#CCCC66' ] -%>
     <%- lines = post.dialogue.split("\r\n") -%>
     <%- authors = {} -%>
     <%- post.dialogue.split("\r\n").each_with_index do |line, index| -%>
       <%- author = line.split(':').first -%>
-      <%- color = authors[author] ||= colors.pop -%>
+      <%- color = authors[author] ||= colors[authors.keys.length % colors.length] -%>
     <li class="message <%= index % 2 == 0 ? 'even' : 'odd' %>">
       <span style="color: <%= color %>; font-weight: bold;"><%= author %>:</span>
       <%= line.split(':').last.strip %>
