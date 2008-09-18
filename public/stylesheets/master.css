@@ -42,10 +42,10 @@ span.message, span.todo, span.warning {
 	color: #666666;
 	display: block;
 	font-weight :bold;
-	margin: 10px 10px;
+	margin: 0px auto;
 	padding: 10px;
 	text-align: center;
-	width: 512px;
+	width: 256px;
 }
 span.message {
 	background-color: #FFFF99;
@@ -83,16 +83,14 @@ form {
 }
 form input, form label, form select, form textarea {
 	display: block;
-	margin: 20px;
+	margin: 10px auto;
+	width: 80%;
 }
 form label.optional {
 	color:#999999;
 }
 form label.required {
 	color:#FF6666;
-}
-form input, form select, form textarea {
-	width: 256px;
 }
 form textarea {
 	height: 128px;
@@ -122,10 +120,10 @@ ul.chat li.message {
 	padding: 5px;
 }
 ul.chat li.message.even {
-	background-color: #EEEEEE;
+	background-color: #DDDDDD;
 }
 ul.chat li.message.odd {
-	background-color: #DDDDDD;
+	background-color: #EEEEEE;
 }
 
 
