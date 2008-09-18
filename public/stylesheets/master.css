@@ -127,8 +127,12 @@ ul.posts li.post ul.chat li.message.odd {
 ul.posts li.post pre.code {
 	background-color: #EEEEEE;
 	color: #000000;
+	overflow: hidden;
 	padding: 20px;
 	text-align: left;
+}
+ul.posts li.post pre.code:hover {
+	overflow: auto;
 }
 
 ul.posts li.post blockquote.quote {
