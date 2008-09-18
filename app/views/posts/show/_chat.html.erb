@@ -4,6 +4,16 @@
   </h1>
 <%- end -%>
 
-  <p>
-    <%= post.dialogue %>
-  </p>
+  <ul class="chat">
+    <%- colors = [ '#CCCC66', '#CC66CC', '#66CCCC', '#CC6666', '#66CC66', '#6666CC' ] -%>
+    <%- lines = post.dialogue.split("\r\n") -%>
+    <%- authors = {} -%>
+    <%- post.dialogue.split("\r\n").each_with_index do |line, index| -%>
+      <%- author = line.split(':').first -%>
+      <%- color = authors[author] ||= colors.pop -%>
+    <li class="message <%= index % 2 == 0 ? 'even' : 'odd' %>">
+      <span style="color: <%= color %>; font-weight: bold;"><%= author %>:</span>
+      <%= line.split(':').last.strip %>
+    </li>
+    <%- end -%>
+  </ul>

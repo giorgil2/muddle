@@ -23,17 +23,11 @@ h3 {
 	line-height: 1.125em;
 	margin-bottom: 1.125em;
 }
-h4 {
-	margin: 0;
+blockquote, input, label, p, pre, td, th, textarea, ul {
+	margin: 0px;
 	font-size: 1.1666666666666667em;
 	line-height: 1.2857142857142858em;
 	margin-bottom: 1.2857142857142858em;
-}
-p, ul, blockquote, pre, td, th, label {
-	margin: 0;
-	font-size: 1em;
-	line-height: 1.5em;
-	margin-bottom: 1.5em;
 }
 label { margin: 0;}
 p.small {
@@ -82,9 +76,60 @@ ul.navigation li a:hover {
 	background-color:#CCCCCC;
 }
 
-label.optional {
+form {
+	text-align:left;
+	margin: 0px auto;
+	width: 256px;
+}
+form input, form label, form textarea {
+	display: block;
+}
+form label.optional {
 	color:#999999;
 }
-label.required {
+form label.required {
 	color:#FF6666;
+}
+form textarea {
+	height: 128px;
+	width: 256px;
+}
+
+ul.posts {
+	margin: 0px auto;
+	padding: 20px;
+	width: 512px;
+}
+ul.posts li.post {
+	border: 1px solid #CCCCCC;
+	margin: 10px;
+	padding: 20px;
+}
+ul.posts li.post h1 {
+	text-align: left;
+}
+ul.posts li.post p {
+	text-align: left;
+}
+
+ul.chat {
+	text-align: left;
+}
+
+ul.chat li.message {
+	padding:5px;
+}
+ul.chat li.message.even {
+	background-color: #EEEEEE;
+}
+ul.chat li.message.odd {
+	background-color: #DDDDDD;
+}
+
+
+pre.code {
+	background-color: #EEEEEE;
+	color: #000000;
+	padding: 20px;
+	text-align: left;
 }
