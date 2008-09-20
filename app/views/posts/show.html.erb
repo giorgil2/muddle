@@ -1,3 +1,9 @@
 <ul class="posts">
   <%= partial :post, :with => @post %>
 </ul>
+
+<ul class="navigation">
+  <a href="<%= url(:posts) %>"><li>index</li></a>
+  <a href="<%= url(:edit_post, @post) %>"><li>edit</li></a>
+  <a href="<%= url(:delete_post, @post) %>" method="delete" onclick="return confirm('Are you sure?');"><li>destroy</li></a>
+</ul>

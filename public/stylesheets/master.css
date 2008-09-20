@@ -1,3 +1,6 @@
+html {
+	background-color:#000000;
+}
 body {
 	font-family: helvetica, arial, sans-serif;
 	font-size: 12px;
@@ -43,6 +46,7 @@ span.message, span.todo, span.warning {
 	display: block;
 	font-weight :bold;
 	margin: 0px auto;
+	margin-top: 10px;
 	padding: 10px;
 	text-align: center;
 	width: 512px;
@@ -69,11 +73,14 @@ ul.navigation li {
 	padding: 5px 0px;
 }
 ul.navigation li a {
-	background-color: #EEEEEE;
+	background-color: #999999;
+	border: 2px solid #666666;
+	color:#FFFFFF;
 	padding: 5px;
+	text-decoration: none;
 }
 ul.navigation li a:hover {
-	background-color: #CCCCCC;
+	background-color: #DDDDDD;
 }
 
 form {
@@ -98,14 +105,30 @@ form textarea {
 
 ul.posts {
 	margin: 0px auto;
-	padding: 20px;
 	width: 512px;
 }
 ul.posts li.post {
-	border: 1px solid #CCCCCC;
+	background-color:#FFFFFF;
+	border: 2px solid #666666;
 	margin: 10px;
 	padding: 20px;
+	position: relative;
 }
+ul.posts li.post a.timestamp {
+	background-color: #999999;	
+	border-bottom: 2px solid #666666;
+	border-right: 2px solid #666666;
+	color:#FFFFFF;
+	left:0;
+	padding:10px;
+	position:absolute;
+	text-decoration: none;
+	top:0;
+}
+ul.posts li.post a.timestamp:hover {
+	background-color: #DDDDDD;
+}
+
 ul.posts li.post h1, ul.posts li.post p {
 	text-align: left;
 }
