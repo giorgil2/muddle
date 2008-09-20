@@ -116,16 +116,16 @@ ul.posts li.post {
 	background-color:#FFFFFF;
 	border: 2px solid #666666;
 	margin: 10px;
-	padding: 20px;
+	padding: 20px 20px 0px 20px;
 	position: relative;
 }
 ul.posts li.post a.timestamp {
 	background-color: #990000;
 	border: 2px solid #660000;
-	border-right: 2px solid #CC6666;
+	border-right: 0;
 	color: #DDDDDD;
 	font-size: 1.1666666666666667em;
-	left: -62px;
+	left: -63px;
 	margin-top: 0.642857142857143em;
 	padding: 0.642857142857143em;
 	padding-right: 1em;
