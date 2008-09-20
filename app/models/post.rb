@@ -10,4 +10,11 @@ class Post
   property :created_at, DateTime
   property :updated_at, DateTime
 
+  # FIXME: The name isn't getting persisted?
+  def file=(new_file)
+    self.name = new_file['filename']
+    @attachment = new_file
+    self.add_attachment(new_file['tempfile'], { :content_type => new_file['content_type'], :name => self.post_type.storage_name })
+  end
+
 end

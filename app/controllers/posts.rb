@@ -37,6 +37,7 @@ class Posts < Application
 
   def update
     @post = Post.get!(params[:id])
+
     if @post.update_attributes(params[:post]) || !@post.dirty?
       redirect url(:post, @post), :message => 'Post updated'
     else

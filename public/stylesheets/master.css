@@ -123,7 +123,6 @@ ul.posts li.post ul.chat li.message.odd {
 	background-color: #EEEEEE;
 }
 
-
 ul.posts li.post pre.code {
 	background-color: #EEEEEE;
 	color: #000000;
@@ -133,6 +132,11 @@ ul.posts li.post pre.code {
 }
 ul.posts li.post pre.code:hover {
 	overflow: auto;
+}
+
+ul.posts li.post img.image {
+	border:10px solid #DDDDDD;
+	max-width:437px;
 }
 
 ul.posts li.post blockquote.quote {

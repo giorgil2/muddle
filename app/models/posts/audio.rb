@@ -2,7 +2,8 @@
 
 class Audio < Post
 
-  property :url, String
+  # property :url, String
   property :description, Text, { :lazy => false }
+  property :name, String
 
 end

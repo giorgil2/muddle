@@ -1,7 +1,12 @@
-  <img src="<%= post.url %>" />
+<%- unless post.attachments -%>
+  <p>No attached file.</p>
+<%- else -%>
+
+  <img class="image" src="<%= couch_uri + post.attachment_path(post.attachments.keys.first) %>" <%= "alt=\"#{post.name}\" " if post.name %>/>
 
 <%- if post.description && !post.description.empty? -%>
   <p>
     <%= post.description %>
   </p>
+<%- end -%>
 <%- end -%>
