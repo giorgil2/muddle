@@ -170,6 +170,7 @@ ul.posts li.post pre.code:hover {
 ul.posts li.post img.image {
 	border:10px solid #DDDDDD;
 	max-width:437px;
+	margin-bottom:15px;
 }
 
 ul.posts li.post blockquote.quote {
