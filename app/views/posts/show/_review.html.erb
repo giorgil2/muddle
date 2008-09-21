@@ -1,0 +1,13 @@
+  <h2>
+    <abbr class="rating" title="<%= post.rating %>"><%- post.rating.times do -%>★<%- end -%><%- (5 - post.rating).times do -%>✩<%- end -%></abbr>
+<%- if post.url -%>
+    <a class="url" href="<%= post.url %>"><span class="item"><%= post.title %></span></a>
+<%- else -%>
+    <span class="item"><%= post.title %></span>
+<%- end -%>
+<%- if post.description && !post.description.empty? -%>
+    <small class="description">
+      &mdash; <%= post.description %>
+    </small>
+<%- end -%>
+  </h2>

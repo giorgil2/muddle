@@ -1,6 +1,6 @@
-    <li class="post">
+    <li class="<%= post.css_class %>">
       <a class="timestamp" href="<%= url(:post, post.id) %>">
-        <abbr title="<%= post.created_at %>"><%= post.created_at.strftime("%m/%d") %></span>
+        <abbr class="updated" title="<%= post.created_at %>"><%= post.updated_at.strftime("%m/%d") %></span>
       </a>
       <%= partial "posts/show/#{post.post_type.name.downcase}", :with => post, :as => :post %>
     </li>

@@ -10,4 +10,15 @@ class Post
   property :created_at, DateTime
   property :updated_at, DateTime
 
+  def css_class
+    case self.post_type.name
+    when 'Link'
+      'xfolkentry post'
+    when 'Review'
+      'hreview post'
+    else
+      'post'
+    end
+  end
+
 end

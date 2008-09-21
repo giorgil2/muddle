@@ -1,6 +1,8 @@
-  <p>
-    <a href="<%= post.url %>"><%= (post.name && !post.name.empty?) ? post.name : post.url %></a>
-    <%- if post.description && !post.description.empty? -%>
-    &mdash; <%= post.description %>
-    <%- end -%>
-  </p>
+  <h2>
+    <a class="taggedlink" href="<%= post.url %>"><%= (post.name && !post.name.empty?) ? post.name : post.url %></a>
+<%- if post.description && !post.description.empty? -%>
+    <small class="description">
+      &mdash; <%= post.description %>
+    </small>
+<%- end -%>
+  </h2>

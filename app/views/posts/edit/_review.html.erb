@@ -1,0 +1,15 @@
+    <label for="post[rating]" class="required">Rating</label>
+    <select id="post[rating]" name="post[rating]">
+      <%- 1.upto(5) do |x| -%>
+      <option<%= ' selected="yes"' if x == post.rating %>><%= x %></option>
+      <%- end -%>
+    </select>
+
+    <label for="post[title]" class="required">Title</label>
+    <input type="text" id="post[title]" name="post[title]" value="<%= post.title %>" />
+
+    <label for="post[url]" class="optional">URL</label>
+    <input type="text" id="post[url]" name="post[url]" value="<%= post.url %>" />
+
+    <label for="post[description]" class="optional">Description</label>
+    <textarea id="post[description]" name="post[description]"><%= post.description %></textarea>
