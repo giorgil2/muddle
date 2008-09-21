@@ -40,9 +40,10 @@ p.small {
 	margin-bottom: 1.8em;
 }
 
-h1.title {
-	color:#DDDDDD;
-	margin-top:0.9em;
+a.title {
+	color:#CCCCCC;
+	padding: 0.9em;
+	text-decoration: none;
 }
 
 span.message, span.todo, span.warning {
@@ -75,7 +76,7 @@ ul.navigation {
 }
 ul.navigation li {
 	display: inline;
-	padding: 5px 0px;
+/*	padding: 5px 0px;*/
 }
 ul.navigation li a {
 	background-color: #999999;

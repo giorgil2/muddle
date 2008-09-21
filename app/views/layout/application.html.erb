@@ -9,7 +9,7 @@
   </head>
   <body>
 
-    <a href="<%= url(:posts) %>"><h1 class="title">Muddle</h1></a>
+    <a class="title" href="<%= url(:posts) %>"><h1>Muddle</h1></a>
 
     <%- unless message.empty? -%>
     <span class="message">
@@ -20,7 +20,7 @@
     <%= catch_content :for_layout %>
 
     <ul class="navigation">
-      <a href="<%= url(:new_post) %>"><li>New Post</li></a>
+      <li><a href="<%= url(:new_post) %>">New Post</a></li>
     </ul>
 
   </body>

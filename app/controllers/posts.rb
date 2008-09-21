@@ -3,7 +3,7 @@ class Posts < Application
   def create
     @post = Post.new(params[:post])
     if @post.save
-      redirect url(:edit_post, @post), :message => 'Post created'
+      redirect url(:edit_post, @post.id), :message => 'Post created'
     else
       render :new
     end
