@@ -4,7 +4,10 @@
 class Image < Post
 
   # property :url, String, { :nullable => false }
+
+  property :title, String
   property :description, Text, { :lazy => false }
   property :name, String
+
 
 end
