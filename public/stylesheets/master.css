@@ -40,9 +40,12 @@ p.small {
 	margin-bottom: 1.8em;
 }
 
-a.title {
+h1.title {
+	margin-top: 0.9em;
+}
+
+h1.title a {
 	color:#CCCCCC;
-	padding: 0.9em;
 	text-decoration: none;
 }
 
@@ -123,7 +126,7 @@ ul.posts li.post {
 ul.posts li.post a.timestamp {
 	background-color: #990000;
 	border: 2px solid #660000;
-	border-right: 0;
+	border-right: 0px;
 	color: #DDDDDD;
 	font-size: 1.1666666666666667em;
 	left: -63px;
