@@ -1,0 +1,12 @@
+<h1>Sign-in</h1>
+
+<form action="<%= url(:login) %>" method="post">
+  
+  <label for="email" class="required">Email</label>
+  <input type="text" id="email" name="email" />
+
+  <label for="password" class="required">Password</label>
+  <input type="password" id="password" name="password" />
+
+  <input type="submit" value="Login!" />
+</form>

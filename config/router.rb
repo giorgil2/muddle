@@ -21,6 +21,10 @@
 
 Merb.logger.info("Compiling routes...")
 Merb::Router.prepare do |r|
+  r.match("/login", :method => "get").to(:controller => "session", :action => "new").name(:login)
+  r.match("/login", :method => "post").to(:controller => "session", :action => "create").name(:login)
+  r.match("/logout").to(:controller => "session", :action => "destroy").name(:logout)
+
   # RESTful routes
   # r.resources :posts
   r.resources :posts
@@ -33,5 +37,5 @@ Merb::Router.prepare do |r|
 
   # Change this for your home page to be available at /
   # r.match('/').to(:controller => 'whatever', :action =>'index')
-  r.match('/').to(:controller => 'posts', :action => 'index')
+  r.match('/').to(:controller => 'posts', :action => 'index').name(:home)
 end
