@@ -1,14 +1,15 @@
 <%- unless post.attachments -%>
   <p>No attached file.</p>
 <%- else -%>
-  <p id='<%= post.id %>_player'></p>
+  <script type='text/javascript' src='/javascripts/swfobject.js'></script>
 
-  <script type='text/javascript' src='swfobject.js'></script>
+  <p id="<%= post.id %>_player"></p>
+
   <script type='text/javascript'>
-  var s1 = new SWFObject('player.swf','player','400','300','9');
-  s1.addParam('allowfullscreen','true');
-  s1.addParam('allowscriptaccess','always');
-  s1.addParam('flashvars','file=<%= attachment_path(post.attachments.keys.first) %>');
-  s1.write('<%= post.id %>_player');
+  var so_<%= post.id %> = new SWFObject('/flash/player.swf','mpl','445','20','9');
+  so_<%= post.id %>.addParam('allowfullscreen','true');
+  so_<%= post.id %>.addParam('allowscriptaccess','always');
+  so_<%= post.id %>.addParam('flashvars','&link=<%= couch_uri + post.attachment_path(post.attachments.keys.first) %>');
+  so_<%= post.id %>.write('<%= post.id %>_player');
   </script>
 <%- end -%>
