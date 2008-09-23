@@ -4,7 +4,7 @@
 
 <%- if logged_in? -%>
 <ul class="navigation">
-  <li><a href="<%= url(:edit_post, @post.id) %>">edit</a></li>
-  <li><a href="<%= url(:delete_post, @post.id) %>" method="delete" onclick="return confirm('Are you sure?');">destroy</a></li>
+  <li><a href="<%= url(:edit_post, @post) %>">edit</a></li>
+  <li><a href="<%= url(:delete_post, @post) %>" method="delete" onclick="return confirm('Are you sure?');">destroy</a></li>
 </ul>
 <%- end -%>

@@ -38,11 +38,11 @@ class Posts < Application
   def update
     @post = Post.get!(params[:id])
 
-    def file=(new_file)
-      unless new_file.nil? || new_file.empty?
-        self.add_attachment(new_file['tempfile'], { :content_type => new_file['content_type'], :name => self.post_type.storage_name })
-      end
-    end
+    # def file=(new_file)
+    #   unless new_file.nil? || new_file.empty?
+    #     self.add_attachment(new_file['tempfile'], { :content_type => new_file['content_type'], :name => self.post_type.storage_name })
+    #   end
+    # end
 
     if (@file = params[:post].delete(:file)) && !@file.empty?
       @post.add_attachment(@file['tempfile'], { :content_type => @file['content_type'], :name => @post.post_type.name.downcase })
