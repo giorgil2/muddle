@@ -10,10 +10,11 @@
   <p id="<%= post.id %>_player"></p>
 
   <script type='text/javascript'>
-  var so_<%= post.id %> = new SWFObject('/flash/player.swf','mpl','445','20','9');
+  var so_<%= post.id %> = new SWFObject('/flash/player.swf','ply','445','20','9', '#FFFFFF');
   so_<%= post.id %>.addParam('allowfullscreen','true');
   so_<%= post.id %>.addParam('allowscriptaccess','always');
-  so_<%= post.id %>.addParam('flashvars','file=<%= couch_uri + post.attachment_path(post.attachments.keys.first) %>');
+  so_<%= post.id %>.addParam('wmode','opaque');
+  so_<%= post.id %>.addParam('flashvars', '&file=<%= attachment_url_for(post) %>&type=sound');
   so_<%= post.id %>.write('<%= post.id %>_player');
   </script>
 <%- end -%>

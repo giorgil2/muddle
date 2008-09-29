@@ -7,7 +7,7 @@
     <%= post.title %>
   </h2>
 <%- end -%>
-  <img class="image" src="<%= couch_uri + post.attachment_path(post.attachments.keys.first) %>" <%= "alt=\"#{post.name}\" " if post.name %>/>
+  <img class="image" src="<%= attachment_url_for(post) %>" <%= "alt=\"#{post.name}\" " if post.name %>/>
 <%- if post.description && !post.description.empty? -%>
   <p>
     <%= post.description %>

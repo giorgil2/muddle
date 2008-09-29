@@ -45,7 +45,7 @@ class Posts < Application
     # end
 
     if (@file = params[:post].delete(:file)) && !@file.empty?
-      @post.add_attachment(@file['tempfile'], { :content_type => @file['content_type'], :name => @post.post_type.name.downcase })
+      @post.add_attachment(@file['tempfile'], { :content_type => @file['content_type'], :name => @post.attachment_name })
       params[:post][:name] = @file['filename']
     end
 

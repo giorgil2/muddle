@@ -1,8 +1,9 @@
 module Merb
   module PostsHelper
 
-    def couch_uri
-      "http://#{request.env['SERVER_NAME']}:5984"
+    def attachment_url_for(post)
+      "http://#{request.env['SERVER_NAME']}:5984" +
+        post.attachment_path(post.attachment_name)
     end
 
   end

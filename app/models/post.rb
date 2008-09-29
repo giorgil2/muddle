@@ -10,6 +10,10 @@ class Post
   property :created_at, DateTime
   property :updated_at, DateTime
 
+  def attachment_name
+    self.post_type.name.downcase
+  end
+
   def css_class
     case self.post_type.name
     when 'Link'
