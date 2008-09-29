@@ -5,7 +5,7 @@ class Session < Application
     if logged_in?
       redirect(url(:home), :message => "You logged in as #{params[:email]}")
     else
-      redirect(url(:login), :message => "Incorrect username or password")
+      redirect(url(:login), :message => "Incorrect email or password")
     end
   end
 
