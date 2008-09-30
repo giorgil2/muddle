@@ -3,7 +3,7 @@ class Posts < Application
   def create
     @post = Post.new(params[:post])
     if @post.save
-      redirect url(:edit_post, @post.id), :message => 'Post created'
+      redirect(url(:edit_post, @post.id), :message => 'Post created')
     else
       render :new
     end
@@ -12,7 +12,7 @@ class Posts < Application
   def delete
     @post = Post.get!(params[:id])
     @post.destroy
-    redirect url(:posts), :message => 'Post deleted'
+    redirect(url(:posts), :message => 'Post deleted')
   end
 
   def edit
@@ -35,14 +35,9 @@ class Posts < Application
     render
   end
 
+  # TODO: delete attachment when changing to url?
   def update
     @post = Post.get!(params[:id])
-
-    # def file=(new_file)
-    #   unless new_file.nil? || new_file.empty?
-    #     self.add_attachment(new_file['tempfile'], { :content_type => new_file['content_type'], :name => self.post_type.storage_name })
-    #   end
-    # end
 
     if (@file = params[:post].delete(:file)) && !@file.empty?
       @post.add_attachment(@file['tempfile'], { :content_type => @file['content_type'], :name => @post.attachment_name })
