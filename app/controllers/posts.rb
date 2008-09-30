@@ -21,7 +21,7 @@ class Posts < Application
   end
 
   def index
-    @posts = Post.all.sort_by {|x| x.created_at}.reverse
+    @posts = (Post.all || []).sort_by {|x| x.created_at}.reverse
     render
   end
 
