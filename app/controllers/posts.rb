@@ -1,3 +1,5 @@
+# TODO: Add comments/replies in the form of threaded posts?
+
 class Posts < Application
 
   def create
