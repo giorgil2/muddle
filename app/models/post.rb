@@ -1,5 +1,3 @@
-require 'dm-types'
-
 class Post
 
   include DataMapper::Resource
