@@ -1,6 +1,6 @@
 .DS_Store
 coverage/*
-log/*.log
+log/*
 script/log/*.log
 spec/models/log/*.log
 test/*
