@@ -53,7 +53,11 @@ describe Application do
 
   describe "access_denied" do
 
-    it "should redirect to login with message"
+    it "should redirect to login with message" do
+      @controller = dispatch_to(Application, :access_denied)
+      @controller.status.should == 302
+      @controller.headers['Location'].should == @controller.url(:login) + encode_message("You must login to access this page")
+    end
 
   end
 
