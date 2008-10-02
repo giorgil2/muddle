@@ -21,7 +21,6 @@ class User
   end
 
   before(:save) do
-    self.email = self.email.downcase
     return if password.blank?
     self.salt = Digest::SHA1.hexdigest([Time.now, (1..10).map { rand.to_s }].join('--')) if new_record?
     self.crypted_password = encrypt(self.password)
@@ -38,7 +37,7 @@ class User
   class << self
 
     def authenticate(email, password)
-      user = User.first(:email => email.downcase)
+      user = User.first(:email => email)
       user && user.authenticated?(password) ? user : nil
     end
 
