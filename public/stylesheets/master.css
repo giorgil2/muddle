@@ -55,6 +55,7 @@ span.message, span.todo, span.warning {
 	display: block;
 	font-weight :bold;
 	margin: 0px auto;
+	margin-bottom: 10px;
 	margin-top: 10px;
 	padding: 10px;
 	text-align: center;
@@ -62,9 +63,10 @@ span.message, span.todo, span.warning {
 }
 span.message {
 	background-color: #FFFF99;
+	border: 2px solid #FFFF1F;
 }
 span.warning {
-	background-color: #FF9999;
+	background-color: #FF1F1F;
 }
 span.warning ul {
 	margin-bottom: 0;
@@ -79,12 +81,9 @@ ul.navigation {
 }
 ul.navigation li {
 	display: inline;
-/*	padding: 5px 0px;*/
 }
 ul.navigation li a {
-	background-color: #999999;
-	border: 2px solid #666666;
-	color:#EEEEEE;
+	color:#666666;
 	padding: 5px;
 	text-decoration: none;
 }
@@ -181,6 +180,7 @@ ul.posts li.post img.image {
 }
 
 ul.posts li.post blockquote.quote {
+	margin-bottom: 0px;
 	text-align: left;
 }
 ul.posts li.post p.quote {
