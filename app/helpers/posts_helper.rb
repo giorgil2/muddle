@@ -6,5 +6,9 @@ module Merb
         post.attachment_path(post.attachment_name)
     end
 
+    def default_date_format
+      '%a %b %d, %Y'
+    end
+
   end
 end # Merb

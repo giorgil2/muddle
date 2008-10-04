@@ -45,7 +45,7 @@ h1.title {
 }
 
 h1.title a {
-	color:#CCCCCC;
+	color:#666666;
 	text-decoration: none;
 }
 
@@ -113,46 +113,37 @@ form textarea {
 }
 
 ul.posts {
-	border: 2px solid #666666;
 	margin: 0px auto;
 	margin-bottom: 20px;
 	width: 512px;
 }
+ul.posts.border {
+	border-bottom: 1px solid #999999;
+}
+ul.posts li.date {
+	color: #666666;
+	text-align: left;
+}
 ul.posts li.post {
 	background-color:#FFFFFF;
-	padding: 20px 20px 0px 20px;
+	padding: 0px 20px;
 	position: relative;
 }
 ul.posts li.seperator {
-	border-bottom: 1px solid #666666;
-	margin: 0 128px;
-	padding: 10px;
+	border-bottom: 1px solid #CCCCCC;
+	margin: 0px 128px 21px 128px;
+	padding: 0px;
 }
 ul.posts li.post a.permalink {
-	position: absolute;
-	right: 10px;
-	bottom: 2px;
-}
-
-
-ul.posts li.post a.timestamp {
-	background-color: #990000;
-	border: 2px solid #660000;
-	border-right: 0px;
-	color: #DDDDDD;
-	font-size: 1.1666666666666667em;
-	left: -63px;
-	margin-top: 0.642857142857143em;
-	padding: 0.642857142857143em;
-	padding-right: 1em;
+	color: #666666;
+	display: none;
+	left: 2px;
 	position: absolute;
 	text-decoration: none;
-	top: 0;
-	width: 32px;
+	top: 0px;
 }
-
-ul.posts li.post a.timestamp:hover {
-	background-color: #CC6666;
+ul.posts li.post:hover a.permalink {
+	display: block;
 }
 
 ul.posts li.post h2, ul.posts li.post p {
@@ -184,14 +175,14 @@ ul.posts li.post pre.code:hover {
 }
 
 ul.posts li.post img.image {
-	border:10px solid #DDDDDD;
-	max-width:437px;
-	margin-bottom:15px;
+	border: 10px solid #DDDDDD;
+	max-width: 437px;
+	margin-bottom: 15px;
 }
 
 ul.posts li.post blockquote.quote {
 	text-align: left;
 }
 ul.posts li.post p.quote {
-	text-align: right;
+	text-align: left;
 }

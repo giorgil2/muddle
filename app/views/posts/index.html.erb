@@ -1,12 +1,12 @@
-<% dates = @posts.collect {|post| post.created_at.strftime('%D')}.uniq! %>
+<% dates = @posts.collect {|post| post.created_at.strftime(default_date_format)}.uniq! %>
 
-<% dates.each do |date| %>
-<ul class="posts">  
-  <li class="post">
-    <%= date %>
+<% dates.collect do |date| %>
+<ul class="posts<%= ' border' unless date == dates.last %>">
+  <li class="date">
+    <h2><%= date %></h2>
   </li>
   <%- posts = [] -%>
-  <%- @posts.select {|post| post.created_at.strftime('%D') == date}.each do |post| -%>
+  <%- @posts.select {|post| post.created_at.strftime(default_date_format) == date}.each do |post| -%>
     <%- posts << partial(:post, :with => post) %>
   <%- end -%>
   <%= posts.join('<li class="seperator"></li>')%>

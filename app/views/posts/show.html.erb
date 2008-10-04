@@ -1,4 +1,7 @@
 <ul class="posts">
+  <li class="date">
+    <h2><%= @post.created_at.strftime(default_date_format) %></h2>
+  </li>
   <%= partial :post, :with => @post %>
 </ul>
 
