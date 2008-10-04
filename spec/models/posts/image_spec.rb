@@ -11,13 +11,4 @@ describe Image do
 
   end
 
-  describe "#css_class" do
-
-    it "should return 'post'" do
-      @post = Image.new
-      @post.css_class.should == 'post'
-    end
-
-  end
-
 end

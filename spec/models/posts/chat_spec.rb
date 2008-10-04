@@ -11,13 +11,4 @@ describe Chat do
 
   end
 
-  describe "#css_class" do
-
-    it "should return 'post'" do
-      @post = Chat.new
-      @post.css_class.should == 'post'
-    end
-
-  end
-
 end

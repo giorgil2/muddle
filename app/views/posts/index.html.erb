@@ -1,3 +1,14 @@
-<ul class="posts">
-  <%= partial :post, :with => @posts %>
+<% dates = @posts.collect {|post| post.created_at.strftime('%D')}.uniq! %>
+
+<% dates.each do |date| %>
+<ul class="posts">  
+  <li class="post">
+    <%= date %>
+  </li>
+  <%- posts = [] -%>
+  <%- @posts.select {|post| post.created_at.strftime('%D') == date}.each do |post| -%>
+    <%- posts << partial(:post, :with => post) %>
+  <%- end -%>
+  <%= posts.join('<li class="seperator"></li>')%>
 </ul>
+<% end %>

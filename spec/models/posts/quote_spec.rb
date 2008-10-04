@@ -11,13 +11,4 @@ describe Quote do
 
   end
 
-  describe "#css_class" do
-
-    it "should return 'post'" do
-      @post = Quote.new
-      @post.css_class.should == 'post'
-    end
-
-  end
-
 end

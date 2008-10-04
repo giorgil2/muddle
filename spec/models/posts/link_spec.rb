@@ -11,13 +11,4 @@ describe Link do
 
   end
 
-  describe "#css_class" do
-
-    it "should return 'xfolkentry post'" do
-      @post = Link.new
-      @post.css_class.should == 'xfolkentry post'
-    end
-
-  end
-
 end

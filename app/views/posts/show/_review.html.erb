@@ -1,4 +1,4 @@
-  <h2>
+  <h2 class="hreview">
     <abbr class="rating" title="<%= post.rating %>"><%- post.rating.times do -%>★<%- end -%><%- (5 - post.rating).times do -%>✩<%- end -%></abbr>
 <%- if post.url -%>
     <a class="url" href="<%= post.url %>"><span class="item"><%= post.title %></span></a>

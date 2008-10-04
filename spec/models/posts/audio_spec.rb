@@ -11,13 +11,4 @@ describe Audio do
 
   end
 
-  describe "#css_class" do
-
-    it "should return 'post'" do
-      @post = Audio.new
-      @post.css_class.should == 'post'
-    end
-
-  end
-
 end

@@ -1,5 +1,5 @@
 html {
-	background-color:#000000;
+	background-color:#FFFFFF;
 }
 body {
 	font-family: helvetica, arial, sans-serif;
@@ -113,16 +113,28 @@ form textarea {
 }
 
 ul.posts {
+	border: 2px solid #666666;
 	margin: 0px auto;
+	margin-bottom: 20px;
 	width: 512px;
 }
 ul.posts li.post {
 	background-color:#FFFFFF;
-	border: 2px solid #666666;
-	margin: 10px;
 	padding: 20px 20px 0px 20px;
 	position: relative;
 }
+ul.posts li.seperator {
+	border-bottom: 1px solid #666666;
+	margin: 0 128px;
+	padding: 10px;
+}
+ul.posts li.post a.permalink {
+	position: absolute;
+	right: 10px;
+	bottom: 2px;
+}
+
+
 ul.posts li.post a.timestamp {
 	background-color: #990000;
 	border: 2px solid #660000;

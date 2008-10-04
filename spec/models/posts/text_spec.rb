@@ -11,13 +11,4 @@ describe Text do
 
   end
 
-  describe "#css_class" do
-
-    it "should return 'post'" do
-      @post = Text.new
-      @post.css_class.should == 'post'
-    end
-
-  end
-
 end

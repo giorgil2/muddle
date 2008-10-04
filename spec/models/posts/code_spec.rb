@@ -11,13 +11,4 @@ describe Code do
 
   end
 
-  describe "#css_class" do
-
-    it "should return 'post'" do
-      @post = Code.new
-      @post.css_class.should == 'post'
-    end
-
-  end
-
 end

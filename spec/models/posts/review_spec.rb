@@ -11,13 +11,4 @@ describe Review do
 
   end
 
-  describe "#css_class" do
-
-    it "should return 'hreview post'" do
-      @post = Review.new
-      @post.css_class.should == 'hreview post'
-    end
-
-  end
-
 end
