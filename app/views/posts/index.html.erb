@@ -9,16 +9,12 @@
   <%- @posts.select {|post| post.created_at.strftime(default_date_format) == date}.each do |post| -%>
     <%- posts << partial(:post, :with => post) %>
   <%- end -%>
-  <%= posts.join('<li class="seperator"></li>')%>
+  <%= posts.join('<li class="seperator"></li>') %>
 </ul>
 <% end %>
 
 <%- page = params[:page] && params[:page].to_i || 1 -%>
 
-<%- if page > 1 -%>
-  <a href="<%= request.uri + "?page=#{page - 1}&previous=#{params[:previous]}" %>">previous</a>
-<%- end -%>
-
 <%- if @posts.total_rows > page * Posts::PER_PAGE -%>
-  <a href="<%= request.uri + "?page=#{page + 1}&next=#{@posts.last.created_at}&previous=#{@posts.first.created_at}" %>">next</a>
+  <a href="<%= request.uri + "?page=#{page + 1}&next=#{@posts.last.created_at}" %>">next</a>
 <%- end -%>

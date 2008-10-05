@@ -1,5 +1,5 @@
 # TODO: Add comments/replies in the form of threaded posts?
-# TODO: pagination
+# TODO: pagination, steps forward, but not back.
 
 class Posts < Application
 
@@ -29,8 +29,6 @@ class Posts < Application
     options = { :count => PER_PAGE, :descending => true }
     if params[:next]
       options.merge!({ :startkey => params[:next], :skip => 1 })
-    elsif params[:previous]
-      options.merge!({ :startkey => params[:previous] })
     end
     @posts = Post.by_date(options)
     render
