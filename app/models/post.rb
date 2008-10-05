@@ -12,4 +12,7 @@ class Post
     self.post_type.name.downcase
   end
 
+  # view :by_question_id, { "map" => "function(doc) { if (doc.couchdb_type == 'answer') emit(doc.question_id, doc) }"}
+  view :by_date, { "map" => "function(doc) { if (doc.couchdb_type == 'post') emit(doc.created_at, doc) }"}
+
 end

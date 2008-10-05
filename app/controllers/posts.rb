@@ -1,8 +1,9 @@
 # TODO: Add comments/replies in the form of threaded posts?
-# TODO: lookup posts with view
 # TODO: pagination
 
 class Posts < Application
+
+  PER_PAGE = 2
 
   def create
     @post = Post.new(params[:post])
@@ -25,7 +26,13 @@ class Posts < Application
   end
 
   def index
-    @posts = Post.all.sort_by {|x| x.created_at}.reverse
+    options = { :count => PER_PAGE, :descending => true }
+    if params[:next]
+      options.merge!({ :startkey => params[:next], :skip => 1 })
+    elsif params[:previous]
+      options.merge!({ :startkey => params[:previous] })
+    end
+    @posts = Post.by_date(options)
     render
   end
 
