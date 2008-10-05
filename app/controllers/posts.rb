@@ -27,8 +27,8 @@ class Posts < Application
 
   def index
     options = { :count => PER_PAGE, :descending => true }
-    if params[:next]
-      options.merge!({ :startkey => params[:next], :skip => 1 })
+    if params[:start]
+      options.merge!({ :startkey => params[:start], :skip => 1 })
     elsif params[:previous]
       options.merge!({ :startkey => params[:previous] })
     end
