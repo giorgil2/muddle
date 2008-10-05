@@ -1,4 +1,3 @@
-# TODO: Make all posts hatom with hidden author fields?
 # TODO: Add comments/replies in the form of threaded posts?
 
 class Posts < Application

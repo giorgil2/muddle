@@ -1,6 +1,6 @@
 <ul class="posts">
   <li class="date">
-    <h2><%= @post.created_at.strftime(default_date_format) %></h2>
+    <h2><abbr title="<%= @post.created_at.strftime('%Y-%m-%dT%H:%MZ%Z') %>"><%= @post.created_at.strftime(default_date_format + ' - %H:%M%p') %></abbr></h2>
   </li>
   <%= partial :post, :with => @post %>
 </ul>
@@ -8,6 +8,7 @@
 <%- if logged_in? -%>
 <ul class="navigation">
   <li><a href="<%= url(:edit_post, @post) %>">edit</a></li>
+  <li>|</li>
   <li><a href="<%= url(:delete_post, @post) %>" method="delete" onclick="return confirm('Are you sure?');">destroy</a></li>
 </ul>
 <%- end -%>
