@@ -1,4 +1,6 @@
 # TODO: Add comments/replies in the form of threaded posts?
+# TODO: lookup posts with view
+# TODO: pagination
 
 class Posts < Application
 
