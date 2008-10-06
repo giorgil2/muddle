@@ -15,6 +15,10 @@
 
 <%- page = params[:page] && params[:page].to_i || 1 -%>
 
-<%- if @posts.total_rows > page * Posts::PER_PAGE -%>
+<%- if page > 1 -%>
+  <a href="<%= request.uri + "?page=#{page - 1}&previous=#{@posts.first.created_at}" %>">previous</a>
+<%- end -%>
+
+<%- if @total_posts > page * Posts::PER_PAGE -%>
   <a href="<%= request.uri + "?page=#{page + 1}&next=#{@posts.last.created_at}" %>">next</a>
 <%- end -%>

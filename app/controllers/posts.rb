@@ -1,9 +1,9 @@
 # TODO: Add comments/replies in the form of threaded posts?
-# TODO: pagination, steps forward, but not back.
+# TODO: pagination, instead of a set amount per day, have each page be one days worth?
 
 class Posts < Application
 
-  PER_PAGE = 2
+  PER_PAGE = 1
 
   def create
     @post = Post.new(params[:post])
@@ -29,8 +29,12 @@ class Posts < Application
     options = { :count => PER_PAGE, :descending => true }
     if params[:next]
       options.merge!({ :startkey => params[:next], :skip => 1 })
+    elsif params[:previous]
+      options.merge!({ :startkey => params[:previous], :skip => 1, :descending => false })
     end
     @posts = Post.by_date(options)
+    @total_posts = @posts.total_rows
+    @posts = @posts.to_a.reverse if params[:previous]
     render
   end
 
