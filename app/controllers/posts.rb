@@ -3,7 +3,7 @@
 
 class Posts < Application
 
-  PER_PAGE = 1
+  PER_PAGE = 2
 
   def create
     @post = Post.new(params[:post])
@@ -27,14 +27,14 @@ class Posts < Application
 
   def index
     options = { :count => PER_PAGE, :descending => true }
-    if params[:next]
-      options.merge!({ :startkey => params[:next], :skip => 1 })
-    elsif params[:previous]
-      options.merge!({ :startkey => params[:previous], :skip => 1, :descending => false })
+    if params[:after]
+      options.merge!({ :startkey => params[:after], :skip => 1 })
+    elsif params[:before]
+      options.merge!({ :startkey => params[:before], :skip => 1, :descending => false })
     end
     @posts = Post.by_date(options)
     @total_posts = @posts.total_rows
-    @posts = @posts.to_a.reverse if params[:previous]
+    @posts = @posts.to_a.reverse if params[:before]
     render
   end
 
