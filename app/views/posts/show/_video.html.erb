@@ -1,0 +1,16 @@
+  <h2>
+    <%= post.name %>
+  </h2>
+
+  <script type='text/javascript' src='/javascripts/swfobject.js'></script>
+
+  <p id="<%= post.id %>_player"></p>
+
+  <script type='text/javascript'>
+  var so_<%= post.id %> = new SWFObject('/flash/player.swf','mpl','445','300','9', '#FFFFFF');
+  so_<%= post.id %>.addParam('allowfullscreen','true');
+  so_<%= post.id %>.addParam('allowscriptaccess','always');
+  so_<%= post.id %>.addParam('wmode','opaque');
+  so_<%= post.id %>.addParam('flashvars', '&file=<%= post.link %>');
+  so_<%= post.id %>.write('<%= post.id %>_player');
+  </script>
