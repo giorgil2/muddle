@@ -3,7 +3,7 @@
 
 class Posts < Application
 
-  PER_PAGE = 2
+  PER_PAGE = 10
 
   def create
     @post = Post.new(params[:post])
