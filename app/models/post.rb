@@ -1,3 +1,5 @@
+# TODO: CouchDB returns incorrect Content-Length headers (0)?
+
 class Post
 
   include DataMapper::Resource
