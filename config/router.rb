@@ -20,14 +20,14 @@
 # See merb/specs/merb/router.rb for a fairly complete usage sample.
 
 Merb.logger.info("Compiling routes...")
-Merb::Router.prepare do |r|
-  r.match("/login", :method => "get").to(:controller => "session", :action => "new").name(:login)
-  r.match("/login", :method => "post").to(:controller => "session", :action => "create").name(:login)
-  r.match("/logout").to(:controller => "session", :action => "destroy").name(:logout)
+Merb::Router.prepare do
+  match("/login", :method => "get").to(:controller => "session", :action => "new").name(:login)
+  match("/login", :method => "post").to(:controller => "session", :action => "create").name(:login)
+  match("/logout").to(:controller => "session", :action => "destroy").name(:logout)
 
   # RESTful routes
   # r.resources :posts
-  r.resources :posts
+  resources :posts
 
   # This is the default route for /:controller/:action/:id
   # This is fine for most cases.  If you're heavily using resource-based
@@ -37,5 +37,5 @@ Merb::Router.prepare do |r|
 
   # Change this for your home page to be available at /
   # r.match('/').to(:controller => 'whatever', :action =>'index')
-  r.match('/').to(:controller => 'posts', :action => 'index').name(:home)
+  match('/').to(:controller => 'posts', :action => 'index').name(:home)
 end
