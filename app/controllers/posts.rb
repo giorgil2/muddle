@@ -1,5 +1,6 @@
 # TODO: Add comments/replies in the form of threaded posts?
 # TODO: pagination, instead of a set amount per day, have each page be one days worth?
+# TODO: via links to credit sources
 
 class Posts < Application
 
