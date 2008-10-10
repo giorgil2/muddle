@@ -12,9 +12,7 @@ class User
   property :crypted_password, String
   property :salt, String
 
-  repository(:default) do
-    has n, :posts
-  end
+  has n, :posts, :repository => repository(:default)
 
   validates_with_method :password_valid?
   def password_valid?
