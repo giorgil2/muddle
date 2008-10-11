@@ -1,11 +1,19 @@
 <form action="<%= url(:posts) %>" method="post">
-  <label for="post[post_type]" class="required">Post Type</label>
-  <select id="post[post_type]" name="post[post_type]">
+  <label for="post_type" class="required">Post Type</label>
+  <select id="post_type" name="post[post_type]">
     <%- Post.descendants.each do |descendant| -%>
       <option value="<%= descendant.name %>"><%= descendant.name %></option>
     <%- end -%>
   </select>
-  
+
+  <ul>
+  <%- Post.descendants.each do |descendant| -%>
+    <li class="form" id="<%= descendant.name %>">
+      <%= partial "posts/edit/#{descendant.name.downcase}", :with => @post, :as => :post %>
+    </li>
+  <%- end -%>
+  </ul>
+
   <input type="submit" value="Create Post!">
   
 </form>
