@@ -3,9 +3,8 @@
 
 class Video < Post
 
-  # property :url, String
+  property :title, String
   property :description, Text, { :lazy => false }
-  property :link, String, { :nullable => false }
   property :name, String
 
 end

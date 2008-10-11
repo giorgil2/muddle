@@ -11,6 +11,6 @@
   so_<%= post.id %>.addParam('allowfullscreen','true');
   so_<%= post.id %>.addParam('allowscriptaccess','always');
   so_<%= post.id %>.addParam('wmode','opaque');
-  so_<%= post.id %>.addParam('flashvars', '&file=<%= post.link %>');
+  so_<%= post.id %>.addParam('flashvars', '&file=<%= attachment_url_for(post) %>&type=video');
   so_<%= post.id %>.write('<%= post.id %>_player');
   </script>

@@ -1,8 +1,8 @@
     <label for="post[name]" class="optional">Name</label>
     <input type="text" id="post[name]" name="post[name]" value="<%= post.name %>" />
 
-    <label for="post[link]" class="required">Link</label>
-    <input type="text" id="post[link]" name="post[link]" value="<%= post.link %>" />
+    <label for="post[file]" class="required">File</label>
+    <input type="file" id="post[file]" name="post[file]" size="12" />
 
     <label for="post[description]" class="optional">Description</label>
     <textarea id="post[description]" name="post[description]"><%= post.description %></textarea>
