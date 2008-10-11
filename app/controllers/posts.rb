@@ -7,9 +7,11 @@ class Posts < Application
   PER_PAGE = 10
 
   def create
-    @post = Post.new(params[:post])
+    type = params[:post].delete('post_type')
+    @post = Object.const_get(:"#{type}").new
+    @post.attributes = params[:post].delete_if {|key, value| !@post.attributes.include?(:"#{key}")}
     if @post.save
-      redirect(url(:edit_post, @post.id), :message => 'Post created')
+      redirect(url(:post, @post.id), :message => 'Post created')
     else
       render :new
     end

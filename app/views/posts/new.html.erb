@@ -2,7 +2,7 @@
   <label for="post_type" class="required">Post Type</label>
   <select id="post_type" name="post[post_type]">
     <%- Post.descendants.each do |descendant| -%>
-      <option value="<%= descendant.name %>"><%= descendant.name %></option>
+      <option value="<%= descendant.name %>" <%= 'selected' if @post.post_type == descendant.name %>><%= descendant.name %></option>
     <%- end -%>
   </select>
 
