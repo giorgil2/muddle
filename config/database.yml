@@ -1,6 +1,6 @@
 development:
   repositories:
-    default: couchdb://localhost:5984/muddle_development
+    couch: couchdb://localhost:5984/muddle_development
     mysql:
       adapter: mysql
       database: muddle_development
@@ -9,7 +9,7 @@ development:
 
 test:
   repositories:
-    default: couchdb://localhost:5984/muddle_test
+    couch: couchdb://localhost:5984/muddle_test
     mysql:
       adapter: mysql
       database: muddle_test
@@ -18,7 +18,7 @@ test:
 
 production:
   repositories:
-    default: couchdb://localhost:5984/muddle
+    couch: couchdb://localhost:5984/muddle
     mysql:
       adapter: mysql
       database: muddle

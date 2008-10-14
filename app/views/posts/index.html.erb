@@ -1,6 +1,6 @@
 <% dates = @posts.collect {|post| post.created_at.strftime(default_date_format)}.uniq %>
 
-<% dates.collect do |date| %>
+<% dates.each do |date| %>
 <ul class="posts<%= ' border' unless date == dates.last %>">
   <li class="date">
     <h2><%= date %></h2>

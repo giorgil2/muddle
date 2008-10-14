@@ -1,3 +1,5 @@
+# TODO: Use merb-auth.
+
 require 'digest/sha1'
 
 class User

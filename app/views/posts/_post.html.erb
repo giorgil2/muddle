@@ -2,5 +2,5 @@
       <%- unless params[:controller] && params[:action] == 'show' -%>
       <a href="<%= url(:post, post) %>" class="permalink" title="permalink">&sect;</a>
       <%- end -%>
-      <%= partial "posts/show/#{post.post_type.name.downcase}", :with => post, :as => :post %>
+      <%= partial "posts/show/#{post.couchdb_type.name.downcase}", :with => post, :as => :post %>
     </li>

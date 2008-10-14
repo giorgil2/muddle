@@ -7,7 +7,7 @@ class Posts < Application
   PER_PAGE = 10
 
   def create
-    type = params[:post].delete('post_type')
+    type = params[:post].delete('couchdb_type')
     @post = Object.const_get(:"#{type}").new
     @post.attributes = params[:post].delete_if {|key, value| !@post.attributes.include?(:"#{key}")}
     if @post.save
