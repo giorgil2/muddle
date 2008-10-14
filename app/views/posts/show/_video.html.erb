@@ -1,3 +1,6 @@
+<%- unless post.attachments -%>
+  <p>No attached file.</p>
+<%- else -%>
   <h2>
     <%= post.name %>
   </h2>
@@ -14,3 +17,4 @@
   so_<%= post.id %>.addParam('flashvars', '&file=<%= attachment_url_for(post) %>&type=video');
   so_<%= post.id %>.write('<%= post.id %>_player');
   </script>
+<%- end -%>

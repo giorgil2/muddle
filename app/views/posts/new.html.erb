@@ -1,8 +1,17 @@
-<form action="<%= url(:posts) %>" method="post">
-  <%= @post.errors.inspect %>
+<form action="<%= url(:posts) %>" enctype="multipart/form-data" method="post">
+
+  <%- unless @post.errors.empty? -%>
+  <span class="warning">
+    <ul>
+    <%- @post.errors.sort.each do |error| -%>
+      <li><%= error %></li>
+    <%- end -%>
+    </ul>
+  </span>
+  <%- end -%>
   
-  <label for="couchdb_type" class="required">Post Type</label>
-  <select id="couchdb_type" name="post[couchdb_type]">
+  <label for="type" class="required">Post Type</label>
+  <select id="type" name="type">
     <%- Post.descendants.each do |descendant| -%>
       <option value="<%= descendant.name %>" <%= 'selected' if @post.couchdb_type == descendant.name %>><%= descendant.name %></option>
     <%- end -%>

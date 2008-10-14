@@ -12,7 +12,7 @@
   
   <input type="hidden" value="put" name="_method"/>
   
-  <%= partial "posts/edit/#{@post.post_type.name.downcase}", :with => @post, :as => :post %>
+  <%= partial "posts/edit/#{@post.couchdb_type.name.downcase}", :with => @post, :as => :post %>
   
   <input type="submit" value="Update Post"/>
   

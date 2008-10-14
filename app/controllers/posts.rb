@@ -7,10 +7,13 @@ class Posts < Application
   PER_PAGE = 10
 
   def create
-    type = params[:post].delete('couchdb_type')
-    @post = Object.const_get(:"#{type}").new
-    @post.attributes = params[:post].delete_if {|key, value| !@post.attributes.include?(:"#{key}")}
+    @post = Object.const_get(:"#{params[:type]}").new
+    type = params[:type].downcase
+    @file = params[type].delete(:file)
+    @post.attributes = params[type]
+    @post.name = @file['filename'] if @file && !@file.empty?
     if @post.save
+      @post.add_attachment(@file['tempfile'], { :content_type => @file['content_type'], :name => @post.attachment_name }) if @file && !@file.empty?
       redirect(url(:post, @post.id), :message => 'Post created')
     else
       render :new
@@ -54,13 +57,13 @@ class Posts < Application
   # TODO: delete attachment when changing to url?
   def update
     @post = Post.get!(params[:id])
-
-    if (@file = params[:post].delete(:file)) && !@file.empty?
+    type = @post.couchdb_type.name.downcase
+    if (@file = params[type].delete(:file)) && !@file.empty?
       @post.add_attachment(@file['tempfile'], { :content_type => @file['content_type'], :name => @post.attachment_name })
-      params[:post][:name] = @file['filename']
+      params[type][:name] = @file['filename']
     end
 
-    if @post.update_attributes(params[:post]) || !@post.dirty?
+    if @post.update_attributes(params[type]) || !@post.dirty?
       redirect url(:post, @post.id), :message => 'Post updated'
     else
       render :edit

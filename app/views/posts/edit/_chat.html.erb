@@ -1,5 +1,5 @@
-    <label for="post[title]" class="optional">Title</label>
-    <input type="text" id="post[title]" name="post[title]" value="<%= post.title if post.attributes.include?(:title) %>" />
+    <label for="chat[title]" class="optional">Title</label>
+    <input type="text" id="chat[title]" name="chat[title]" value="<%= post.title if post.attributes.include?(:title) %>" />
   
-    <label for="post[dialogue]" class="required">Dialogue</label>
-    <textarea id="post[dialogue]" name="post[dialogue]"><%= post.dialogue if post.attributes.include?(:dialogue) %></textarea>
+    <label for="chat[dialogue]" class="required">Dialogue</label>
+    <textarea id="chat[dialogue]" name="chat[dialogue]"><%= post.dialogue if post.attributes.include?(:dialogue) %></textarea>

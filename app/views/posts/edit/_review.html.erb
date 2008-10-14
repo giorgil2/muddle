@@ -1,15 +1,15 @@
-    <label for="post[rating]" class="required">Rating</label>
-    <select id="post[rating]" name="post[rating]">
+    <label for="review[rating]" class="required">Rating</label>
+    <select id="review[rating]" name="review[rating]">
       <%- 1.upto(5) do |x| -%>
       <option<%= ' selected="yes"' if post.attributes.include?(:rating) && x == post.rating %>><%= x %></option>
       <%- end -%>
     </select>
 
-    <label for="post[title]" class="required">Title</label>
-    <input type="text" id="post[title]" name="post[title]" value="<%= post.title if post.attributes.include?(:title) %>" />
+    <label for="review[title]" class="required">Title</label>
+    <input type="text" id="review[title]" name="review[title]" value="<%= post.title if post.attributes.include?(:title) %>" />
 
-    <label for="post[link]" class="optional">Link</label>
-    <input type="text" id="post[link]" name="post[link]" value="<%= post.link if post.attributes.include?(:link) %>" />
+    <label for="review[link]" class="optional">Link</label>
+    <input type="text" id="review[link]" name="review[link]" value="<%= post.link if post.attributes.include?(:link) %>" />
 
-    <label for="post[description]" class="optional">Description</label>
-    <textarea id="post[description]" name="post[description]"><%= post.description if post.attributes.include?(:description) %></textarea>
+    <label for="review[description]" class="optional">Description</label>
+    <textarea id="review[description]" name="review[description]"><%= post.description if post.attributes.include?(:description) %></textarea>

@@ -1,5 +1,5 @@
-    <label for="post[quote]" class="required">Quote</label>
-    <textarea id="post[quote]" name="post[quote]"><%= post.quote if post.attributes.include?(:quote) %></textarea>
+    <label for="quote[quote]" class="required">Quote</label>
+    <textarea id="quote[quote]" name="quote[quote]"><%= post.quote if post.attributes.include?(:quote) %></textarea>
 
-    <label for="post[source]" class="optional">Source</label>
-    <input type="text" id="post[source]" name="post[source]" value="<%= post.source if post.attributes.include?(:source) %>" />
+    <label for="quote[source]" class="optional">Source</label>
+    <input type="text" id="quote[source]" name="quote[source]" value="<%= post.source if post.attributes.include?(:source) %>" />

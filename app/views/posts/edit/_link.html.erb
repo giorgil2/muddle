@@ -1,8 +1,8 @@
-    <label for="post[name]" class="optional">Name</label>
-    <input type="text" id="post[name]" name="post[name]" value="<%= post.name if post.attributes.include?(:name) %>" />
+    <label for="link[name]" class="optional">Name</label>
+    <input type="text" id="link[name]" name="link[name]" value="<%= post.name if post.attributes.include?(:name) %>" />
 
-    <label for="post[link]" class="required">Link</label>
-    <input type="text" id="post[link]" name="post[link]" value="<%= post.link if post.attributes.include?(:link) %>" />
+    <label for="link[link]" class="required">Link</label>
+    <input type="text" id="link[link]" name="link[link]" value="<%= post.link if post.attributes.include?(:link) %>" />
 
-    <label for="post[description]" class="optional">Description</label>
-    <textarea id="post[description]" name="post[description]"><%= post.description if post.attributes.include?(:description) %></textarea>
+    <label for="link[description]" class="optional">Description</label>
+    <textarea id="link[description]" name="link[description]"><%= post.description if post.attributes.include?(:description) %></textarea>

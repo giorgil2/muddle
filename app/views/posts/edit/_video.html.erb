@@ -1,8 +1,8 @@
-    <label for="post[title]" class="optional">Title</label>
-    <input type="text" id="post[title]" name="post[title]" value="<%= post.name if post.attributes.include?(:name) %>" />
+    <label for="video[title]" class="optional">Title</label>
+    <input type="text" id="video[title]" name="video[title]" value="<%= post.name if post.attributes.include?(:name) %>" />
 
-    <label for="post[file]" class="required">File</label>
-    <input type="file" id="post[file]" name="post[file]" size="12" />
+    <label for="video[file]" class="required">File</label>
+    <input type="file" id="video[file]" name="video[file]" size="12" />
 
-    <label for="post[description]" class="optional">Description</label>
-    <textarea id="post[description]" name="post[description]"><%= post.description if post.attributes.include?(:description) %></textarea>
+    <label for="video[description]" class="optional">Description</label>
+    <textarea id="video[description]" name="video[description]"><%= post.description if post.attributes.include?(:description) %></textarea>
