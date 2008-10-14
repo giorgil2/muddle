@@ -1,6 +1,7 @@
 # TODO: Add comments/replies in the form of threaded posts?
 # TODO: pagination, instead of a set amount per day, have each page be one days worth?
 # TODO: via links to credit sources
+# TODO: should not allow creation of audio/image/video without an attached file or link
 
 class Posts < Application
 
