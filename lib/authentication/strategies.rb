@@ -4,3 +4,4 @@
 # Merb::Authentication.activate!(:label_of_strategy)
 #
 # To load and set the order of strategy processing
+Merb::Authentication.activate!(:default_password_form)

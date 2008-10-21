@@ -21,9 +21,10 @@
 
 Merb.logger.info("Compiling routes...")
 Merb::Router.prepare do
-  match("/login", :method => "get").to(:controller => "session", :action => "new").name(:login)
-  match("/login", :method => "post").to(:controller => "session", :action => "create").name(:login)
-  match("/logout").to(:controller => "session", :action => "destroy").name(:logout)
+  # match("/login", :method => "get").to(:controller => "session", :action => "new").name(:login)
+  # match("/login", :method => "post").to(:controller => "session", :action => "create").name(:login)
+  # match("/logout").to(:controller => "session", :action => "destroy").name(:logout)
+  slice(:MerbAuthSlicePassword, :name_prefix => nil, :path_prefix => nil, :default_routes => false)
 
   # RESTful routes
   # r.resources :posts

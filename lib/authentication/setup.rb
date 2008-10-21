@@ -6,6 +6,7 @@
 #
 # Merb::Plugins.config[:"merb-auth"][:no_strategies] = true 
 # Merb::Plugins.config[:"merb-auth"][:strategies] = [:default_openid, :default_password_form]
+Merb::Plugins.config[:"merb-auth"][:strategies] = [:default_password_form]
 #
 # The above statements  will either set merb-auth (no merb-auth-core or merb-auth-more) to not load any strategies
 # The next statement sets the strategies to load by default. 
@@ -18,5 +19,7 @@
 #
 # To change the parameter names for the password or login field you may set either of these two options
 #
-# Merb::Plugins.config[:"merb-auth"][:login_param]    = :email 
+Merb::Plugins.config[:"merb-auth"][:login_param]    = :email
 # Merb::Plugins.config[:"merb-auth"][:password_param] = :my_password_field_name
+
+Merb::Authentication.user_class = User
