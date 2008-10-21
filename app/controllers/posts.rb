@@ -5,6 +5,8 @@
 
 class Posts < Application
 
+  before :ensure_authenticated, :exclude => [:index, :show]
+
   PER_PAGE = 10
 
   def create

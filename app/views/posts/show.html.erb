@@ -5,7 +5,7 @@
   <%= partial :post, :with => @post %>
 </ul>
 
-<%- if logged_in? -%>
+<%- if session.authenticated? -%>
 <ul class="navigation">
   <li><a href="<%= url(:edit_post, @post) %>">edit</a></li>
   <li>|</li>

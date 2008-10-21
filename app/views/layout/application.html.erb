@@ -10,7 +10,7 @@
 
     <h1 class="title"><a href="<%= url(:posts) %>">Muddle</a></h1>
 
-    <%- if logged_in? -%>
+    <%- if session.authenticated? -%>
     <ul class="navigation">
       <li><a href="<%= url(:new_post) %>">New Post</a></li>
       <li>|</li>

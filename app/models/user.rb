@@ -1,7 +1,4 @@
-require 'merb-auth-more/mixins/salted_user'
-
 class User
-  include Merb::Authentication::Mixins::SaltedUser
   include DataMapper::Resource
 
   def self.default_repository_name
