@@ -1,30 +1,40 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
   <head>
-    <title>Muddle</title>
+    <title>geemus</title>
+    <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <%= js_include_tag 'jquery-1.2.6.min', 'application' %>
     <%= css_include_tag 'reset-min', 'master' %>
+    <%= js_include_tag 'jquery-1.2.6.min', 'application', 'swfobject' %>
   </head>
   <body>
 
-    <h1 class="title"><a href="<%= url(:posts) %>">Muddle</a></h1>
+    <div class="main">
 
-    <%- if session.authenticated? -%>
-    <ul class="navigation">
-      <li><a href="<%= url(:new_post) %>">New Post</a></li>
-      <li>|</li>
-      <li><a href="<%= url(:logout) %>">Logout</a></li>
-    </ul>
-    <%- end -%>
+      <div class="header">
+        <a href="<%= url(:posts) %>">
+          <%= image_tag('geemus.png', :alt => 'geemus', :title => 'geemus') %>
+        </a>
+      </div>
 
-    <%- unless message.empty? -%>
-    <span class="message">
-      <%= message %>
-    </span>
-    <%- end -%>
+      <%- if session.authenticated? -%>
+      <div class="menu">
+        <a href="<%= url(:new_post) %>">New Post</a>
+        <a href="<%= url(:logout) %>">Logout</a>
+      </div>
+      <%- end -%>
+
+      <div class="content">
+        <%- unless message.empty? -%>
+        <span class="message">
+          <%= message %>
+        </span>
+        <%- end -%>
     
-    <%= catch_content :for_layout %>
+        <%= catch_content :for_layout %>
+      </div>
+
+    </div>
 
   </body>
 </html>

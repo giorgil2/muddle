@@ -2,7 +2,7 @@
     <input type="text" id="audio[title]" name="audio[title]" value="<%= post.title if post.attributes.include?(:title) %>">
 
     <label for="audio[file]" class="required">File</label>
-    <input type="file" id="audio[file]" name="audio[file]" size="12" />
+    <input type="file" id="audio[file]" name="audio[file]" size="36" />
 
     <label for="audio[description]" class="optional">Description</label>
     <textarea id="audio[description]" name="audio[description]"><%= post.description if post.attributes.include?(:description) %></textarea>

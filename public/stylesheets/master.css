@@ -1,6 +1,7 @@
 html {
-	background-color:#FFFFFF;
+	background-color:#111111;	
 }
+
 body {
 	font-family: helvetica, arial, sans-serif;
 	font-size: 12px;
@@ -40,13 +41,45 @@ p.small {
 	margin-bottom: 1.8em;
 }
 
-h1.title {
-	margin-top: 0.9em;
+a {
+	color: #999;
+	text-decoration: none;
+}
+a:hover {
+	color: #CCC;
 }
 
-h1.title a {
-	color:#666666;
-	text-decoration: none;
+.main {
+	background-color: #000;
+	border: 2px solid #222;
+	margin: 20px auto; 
+	text-align: left;
+	width: 600px;
+}
+
+.header {
+	padding: 56px;
+	text-align: center;
+}
+
+.menu a {
+	padding: 5px;
+	border-right: 1px solid #222;
+	border-top: 1px solid #222;
+	float: left;
+	font-size: 1.2em;
+	padding: 10px;
+	width:128px;
+}
+.menu a:hover {
+	background-color: #111111;
+}
+
+.content {
+	border-top: 1px solid #222;
+  clear:both;
+  color:#666;
+  padding-top: 20px;
 }
 
 span.message, span.todo, span.warning {
@@ -75,27 +108,10 @@ span.warning ul li {
 	list-style: disc;
 }
 
-ul.navigation {
-	margin-bottom: 10px;
-	padding: 10px;
-}
-ul.navigation li {
-	color:#666666;
-	display: inline;
-}
-ul.navigation li a {
-	color:#666666;	
-	padding: 5px;
-	text-decoration: none;
-}
-ul.navigation li a:hover {
-	background-color: #DDDDDD;
-}
-
 form {
 	text-align:left;
 	margin: 0px auto;
-	width: 256px;
+	width: 512px;
 }
 form input, form label, form select, form textarea {
 	display: block;
@@ -112,7 +128,7 @@ form textarea {
 	height: 128px;
 }
 form span.message, form span.warning {
-	width: 236px;
+	width: 512px;
 }
 
 ul.posts {
@@ -121,24 +137,22 @@ ul.posts {
 	width: 512px;
 }
 ul.posts.border {
-	border-bottom: 1px solid #999999;
+	border-bottom: 1px solid #222222;
 }
 ul.posts li.date {
 	color: #666666;
 	text-align: left;
 }
 ul.posts li.post {
-	background-color:#FFFFFF;
 	padding: 0px 20px;
 	position: relative;
 }
 ul.posts li.seperator {
-	border-bottom: 1px solid #CCCCCC;
+	border-bottom: 1px solid #222222;
 	margin: 0px 128px 21px 128px;
 	padding: 0px;
 }
 ul.posts li.post a.permalink {
-	color: #666666;
 	display: none;
 	left: 2px;
 	position: absolute;
@@ -160,15 +174,14 @@ ul.posts li.post ul.chat li.message {
 	padding: 5px;
 }
 ul.posts li.post ul.chat li.message.even {
-	background-color: #DDDDDD;
+	background-color: #111111;
 }
 ul.posts li.post ul.chat li.message.odd {
-	background-color: #EEEEEE;
+	background-color: #222222;
 }
 
 ul.posts li.post pre.code {
-	background-color: #EEEEEE;
-	color: #000000;
+	background-color: #222222;
 	overflow: hidden;
 	padding: 20px;
 	text-align: left;
@@ -177,8 +190,11 @@ ul.posts li.post pre.code:hover {
 	overflow: auto;
 }
 
-ul.posts li.post img.image {
-	border: 10px solid #DDDDDD;
+ul.posts li.post .image {
+	text-align: center;
+}
+ul.posts li.post .image img {
+	border: 10px solid #222222;
 	max-width: 437px;
 	margin-bottom: 15px;
 }

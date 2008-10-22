@@ -7,7 +7,9 @@
     <%= post.title %>
   </h2>
 <%- end -%>
-  <img class="image" src="<%= attachment_url_for(post) %>" <%= "alt=\"#{post.name}\" " if post.name %>/>
+  <div class="image">
+    <img src="<%= attachment_url_for(post) %>" <%= "alt=\"#{post.name}\" " if post.name %>/>
+  </div>
 <%- if post.description && !post.description.empty? -%>
   <p>
     <%= post.description %>
