@@ -11,8 +11,8 @@ class Posts < Application
 
   def create
     type = params[:type].downcase
-    @post = Object.const_get(:"#{params[:type]}").new(params[type])
     @file = params[type].delete(:file)
+    @post = Object.const_get(:"#{params[:type]}").new(params[type])
     @post.name = @file['filename'] if @file && !@file.empty?
     if @post.save
       @post.add_attachment(@file['tempfile'], { :content_type => @file['content_type'], :name => @post.attachment_name }) if @file && !@file.empty?
