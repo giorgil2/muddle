@@ -16,7 +16,7 @@ class Posts < Application
     @post.name = @file['filename'] if @file && !@file.empty?
     if @post.save
       @post.add_attachment(@file['tempfile'], { :content_type => @file['content_type'], :name => @post.attachment_name }) if @file && !@file.empty?
-      redirect(url(:post, @post.id), :message => 'Post created')
+      redirect(url(:post, @post.id), :message => {:notice => 'Post created' })
     else
       render :new
     end
@@ -25,7 +25,7 @@ class Posts < Application
   def delete
     @post = Post.get!(params[:id])
     @post.destroy
-    redirect(url(:posts), :message => 'Post deleted')
+    redirect(url(:posts), :message => { :notice => 'Post deleted' })
   end
 
   def edit
@@ -66,7 +66,7 @@ class Posts < Application
     end
 
     if @post.update_attributes(params[type]) || !@post.dirty?
-      redirect url(:post, @post.id), :message => 'Post updated'
+      redirect url(:post, @post.id), :message => { :notice => 'Post updated' }
     else
       render :edit
     end
