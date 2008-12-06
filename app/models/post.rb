@@ -9,6 +9,10 @@ class Post
     self.couchdb_type.name.downcase
   end
 
+  def self.default_repository_name
+    :couch
+  end
+
   repository(:mysql) do
     belongs_to :user
   end

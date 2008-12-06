@@ -1,5 +1,5 @@
-merb_gems_version = "1.0"
-dm_gems_version = "0.9.7"
+merb_gems_version = "1.0.3"
+dm_gems_version = "0.9.8"
 
 # dependency "merb-action-args", merb_gems_version
 dependency "merb-assets", merb_gems_version
@@ -20,3 +20,4 @@ dependency "dm-sweatshop", dm_gems_version
 dependency "dm-timestamps", dm_gems_version
 dependency "dm-types", dm_gems_version
 dependency "dm-validations", dm_gems_version
+dependency "dm-couchdb-adapter", dm_gems_version, :require_as => 'couchdb_adapter'
