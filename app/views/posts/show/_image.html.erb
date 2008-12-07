@@ -2,17 +2,13 @@
   <p>No attached file.</p>
 <%- else -%>
 
-<%- if post.title && !post.title.empty? -%>
-  <h2>
-    <%= post.title %>
-  </h2>
-<%- end -%>
+  <%- if post.title && !post.title.empty? -%>
+  <h2><%= post.title %></h2>
+  <%- end -%>
   <div class="image">
     <img src="<%= attachment_url_for(post) %>" <%= "alt=\"#{post.name}\" " if post.name %>/>
   </div>
-<%- if post.description && !post.description.empty? -%>
-  <p>
-    <%= post.description %>
-  </p>
-<%- end -%>
-<%- end -%>
+  <%- if post.description && !post.description.empty? -%>
+  <p><%= post.description %></p>
+  <%- end -%>
+<%- end %>

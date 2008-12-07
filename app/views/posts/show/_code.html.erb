@@ -1,13 +1,9 @@
 <%- if post.title && !post.title.empty? -%>
-  <h2>
-    <%= post.title %>
-  </h2>
+  <h2><%= post.title %></h2>
 <%- end -%>
 
   <pre class="code"><code><%= post.code %></code></pre>
   
 <%- if post.description && !post.description.empty? -%>
-  <p>
-    <%= post.description %>
-  </p>
+  <p><%= post.description %></p>
 <%- end -%>
