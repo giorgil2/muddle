@@ -52,7 +52,7 @@ a:hover {
 .main {
 	background-color: #000;
 	border: 2px solid #222;
-	margin: 20px auto; 
+	margin: 20px auto;
 	text-align: left;
 	width: 600px;
 }
@@ -217,4 +217,8 @@ ul.navigation {
 }
 ul.navigation li {
 	display: inline;
+}
+
+div.footer {
+	margin: 20px auto;
 }
