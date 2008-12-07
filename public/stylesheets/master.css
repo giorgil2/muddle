@@ -179,6 +179,9 @@ ul.posts li.post ul.chat li.message.even {
 ul.posts li.post ul.chat li.message.odd {
 	background-color: #222222;
 }
+ul.posts li.post ul.chat li.message span {
+	font-weight: bold;
+}
 
 ul.posts li.post pre.code {
 	background-color: #222222;
@@ -205,4 +208,13 @@ ul.posts li.post blockquote.quote {
 }
 ul.posts li.post p.quote {
 	text-align: left;
+}
+
+ul.navigation {
+	margin: 0px auto;
+	margin-bottom: 20px;
+	width: 512px;
+}
+ul.navigation li {
+	display: inline;
 }

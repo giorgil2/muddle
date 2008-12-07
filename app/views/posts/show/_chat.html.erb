@@ -1,7 +1,5 @@
 <%- if post.title && !post.title.empty? -%>
-  <h2>
-    <%= post.title %>
-  </h2>
+  <h2><%= post.title %></h2>
 <%- end -%>
 
   <ul class="chat">
@@ -12,7 +10,7 @@
       <%- author = line.split(':').first -%>
       <%- color = authors[author] ||= colors[authors.keys.length % colors.length] -%>
     <li class="message <%= index % 2 == 0 ? 'even' : 'odd' %>">
-      <span style="color: <%= color %>; font-weight: bold;"><%= author %>:</span>
+      <span style="color: <%= color %>;"><%= author %>:</span>
       <%= line.split(':').last.strip %>
     </li>
     <%- end -%>

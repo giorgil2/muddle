@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <author>
+    <name>Wesley Beary</name>
+  </author>
+  <id><%= absolute_url(:posts) %></id>
+  <link rel="self" href="<%= absolute_url(:posts, :format => :atom) %>"/>
+  <link rel="alternate" type="text/html" href="<%= absolute_url(:posts) %>"/>
+  <rights>Creative Commons Attribution - Wesley Beary</rights>
+  <title>geemus</title>
+  <updated><%= @posts.first.updated_at %></updated>
+  
+  <%- @posts.each do |post| -%>
+  <entry>
+    <id><%= absolute_url(:post, post) %></id>
+    <link rel="alternate" type="text/html" href="<%= absolute_url(:post, post) %>"/>
+    <title><%= post.title && !post.title.empty? ? post.title : post.name %></title>
+    <updated><%= post.updated_at %></updated>
+    <content type="html">
+      <![CDATA[<%= partial "posts/show/#{post.couchdb_type.name.downcase}", :format => :html, :with => post, :as => :post %>]]>
+    </content>
+  </entry>
+  <%- end -%>
+
+</feed>
