@@ -1,8 +1,8 @@
   <h2 class="xfolkentry">
-    <a class="taggedlink" href="<%= post.link %>"><%= (post.name && !post.name.empty?) ? post.name : post.link %></a>
-<%- if post.description && !post.description.empty? -%>
+    <a class="taggedlink" href="<%= post.url %>"><%= post.title %></a>
+  <%- if post.notes && !post.notes.empty? -%>
     <small class="description">
-      &mdash; <%= post.description %>
+      &mdash; <%= post.notes %>
     </small>
-<%- end -%>
+  <%- end -%>
   </h2>

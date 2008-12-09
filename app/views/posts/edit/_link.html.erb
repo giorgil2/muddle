@@ -1,8 +1,8 @@
-    <label for="link[name]" class="optional">Name</label>
-    <input type="text" id="link[name]" name="link[name]" value="<%= post.name if post.attributes.include?(:name) %>" />
+    <label for="link[url]" class="required">Link</label>
+    <input type="text" id="link[url]" name="link[url]" value="<%= post.url if post.attributes.include?(:url) %>" />
 
-    <label for="link[link]" class="required">Link</label>
-    <input type="text" id="link[link]" name="link[link]" value="<%= post.link if post.attributes.include?(:link) %>" />
+    <label for="link[title]" class="optional">Title <small>(will default to title attribute of linked page)</small></label>
+    <input type="text" id="link[title]" name="link[title]" value="<%= post.title if post.attributes.include?(:title) %>" />
 
-    <label for="link[description]" class="optional">Description</label>
-    <textarea id="link[description]" name="link[description]"><%= post.description if post.attributes.include?(:description) %></textarea>
+    <label for="link[notes]" class="optional">Notes</label>
+    <textarea id="link[notes]" name="link[notes]"><%= post.notes if post.attributes.include?(:notes) %></textarea>
