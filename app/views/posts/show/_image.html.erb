@@ -9,6 +9,6 @@
     <img src="<%= attachment_url_for(post) %>" <%= "alt=\"#{post.name}\" " if post.name %>/>
   </div>
   <%- if post.description && !post.description.empty? -%>
-  <p><%= post.description %></p>
+  <p><%= post.description.gsub("\r", "<br/>") %></p>
   <%- end -%>
 <%- end %>

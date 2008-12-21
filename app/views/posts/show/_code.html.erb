@@ -5,5 +5,5 @@
   <pre class="code"><code><%= post.code %></code></pre>
   
 <%- if post.description && !post.description.empty? -%>
-  <p><%= post.description %></p>
+  <p><%= post.description.gsub("\r", "<br/>") %></p>
 <%- end -%>

@@ -2,7 +2,7 @@
     <a class="taggedlink" href="<%= post.url %>"><%= post.title %></a>
   <%- if post.notes && !post.notes.empty? -%>
     <small class="description">
-      &mdash; <%= post.notes %>
+      &mdash; <%= post.notes.gsub("\r", "<br/>") %>
     </small>
   <%- end -%>
   </h2>

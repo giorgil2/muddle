@@ -4,7 +4,7 @@ html {
 
 body {
 	font-family: helvetica, arial, sans-serif;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 1.5em;
 	text-align: center;
 }
@@ -64,8 +64,8 @@ a:hover {
 
 .menu a {
 	padding: 5px;
-	border-right: 1px solid #222;
-	border-top: 1px solid #222;
+	border-right: 2px solid #222;
+	border-top: 2px solid #222;
 	float: left;
 	font-size: 1.2em;
 	padding: 10px;
@@ -76,7 +76,7 @@ a:hover {
 }
 
 .content {
-	border-top: 1px solid #222;
+	border-top: 2px solid #222;
   clear:both;
   color:#666;
   padding-top: 20px;
@@ -137,7 +137,7 @@ ul.posts {
 	width: 512px;
 }
 ul.posts.border {
-	border-bottom: 1px solid #222222;
+	border-bottom: 2px solid #222222;
 }
 ul.posts li.date {
 	color: #666666;
@@ -148,7 +148,7 @@ ul.posts li.post {
 	position: relative;
 }
 ul.posts li.seperator {
-	border-bottom: 1px solid #222222;
+	border-bottom: 2px solid #222222;
 	margin: 0px 128px 21px 128px;
 	padding: 0px;
 }

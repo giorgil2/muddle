@@ -1,5 +1,5 @@
   <blockquote class="quote">
-    "<%= post.quote%>"
+    "<%= post.quote.gsub("\r", "<br/>") %>"
   </blockquote>
 
 <%- if post.source && !post.source.empty? -%>

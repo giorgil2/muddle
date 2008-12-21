@@ -15,7 +15,7 @@
   <entry>
     <id><%= absolute_url(:post, post) %></id>
     <link rel="alternate" type="text/html" href="<%= absolute_url(:post, post) %>"/>
-    <title><%= post.title && !post.title.empty? ? post.title : post.name %></title>
+    <title><%= (post.attributes.include?(:title) && !post.title.empty? ? post.title : nil) || (post.attributes.include?(:name) && !post.name.empty? ? post.name : nil) || post.updated_at %></title>
     <updated><%= post.updated_at %></updated>
     <content type="html">
       <![CDATA[<%= partial "posts/show/#{post.couchdb_type.name.downcase}", :format => :html, :with => post, :as => :post %>]]>

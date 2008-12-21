@@ -7,7 +7,7 @@
   <%- end -%>
   <%- if post.description && !post.description.empty? -%>
     <small class="description">
-      &mdash; <%= post.description %>
+      &mdash; <%= post.description.gsub("\r", "<br/>") %>
     </small>
   <%- end -%>
   </h2>
