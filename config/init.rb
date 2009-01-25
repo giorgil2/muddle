@@ -15,6 +15,8 @@ Merb::Config.use do |c|
   # cookie session store configuration
   c[:session_secret_key]  = '2ba11c91acaa954ea631293e48e2c515be15b4c0'  # required for cookie session store
   # c[:session_id_key] = '_session_id' # cookie session id key, defaults to "_session_id"
+
+  Merb::Plugins.config[:merb_datamapper][:use_repository_block] = false
 end
 
 Merb::BootLoader.after_app_loads do

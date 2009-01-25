@@ -18,6 +18,6 @@ class Post
   end
 
   # view :by_question_id, { "map" => "function(doc) { if (doc.couchdb_type == 'answer') emit(doc.question_id, doc) }"}
-  view :by_date, { "map" => "function(doc) { if (doc.couchdb_type == 'Post' || doc.couchdb_type == 'Audio' || doc.couchdb_type == 'Chat' || doc.couchdb_type == 'Code' || doc.couchdb_type == 'Image' || doc.couchdb_type == 'Link' || doc.couchdb_type == 'Quote' || doc.couchdb_type == 'Review' || doc.couchdb_type == 'Status' || doc.couchdb_type == 'Text' || doc.couchdb_type == 'Video') emit(doc.created_at, doc) }"}
+  view(:by_date) {{ "map" => "function(doc) { if (#{couchdb_types_condition}) { emit(doc.created_at, doc); } }" }}
 
 end
