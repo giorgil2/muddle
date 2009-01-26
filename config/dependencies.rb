@@ -22,4 +22,8 @@ dependency "dm-types", dm_gems_version
 dependency "dm-validations", dm_gems_version
 dependency "dm-couchdb-adapter", dm_gems_version, :require_as => 'couchdb_adapter'
 
+dependency "hpricot"
 dependency "json"
+
+require "net/https"
+require 'open-uri'

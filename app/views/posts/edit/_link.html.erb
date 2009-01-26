@@ -6,3 +6,12 @@
 
     <label for="link[notes]" class="optional">Notes</label>
     <textarea id="link[notes]" name="link[notes]"><%= post.notes if post.attributes.include?(:notes) %></textarea>
+
+    <label for="link[tags]" class="optional">Tags <small>(space delimited)</small></label>
+    <input type="text" id="link[tags]" name="link[tags]" value="<%= post.tags if post.attributes.include?(:tags) %>" />
+
+    <label for="delicious_username" class="optional">del.icio.us username</label>
+    <input type="text" name="delicious_username" value="" />
+
+    <label for="delicious_password" class="optional">del.icio.us password</label>
+    <input type="password" name="delicious_password" value="" />
