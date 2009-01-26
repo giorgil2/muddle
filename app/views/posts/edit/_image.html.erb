@@ -2,7 +2,7 @@
     <input type="text" id="image[title]" name="image[title]" value="<%= post.title if post.attributes.include?(:title) %>">
 
     <label for="image[file]" class="required">File</label>
-    <input type="file" id="image[file]" name="image[file]" size="36" />
+    <input type="file" id="image[file]" name="image[file]" size="24" />
 
     <label for="image[description]" class="optional">Description</label>
     <textarea id="image[description]" name="image[description]"><%= post.description if post.attributes.include?(:description) %></textarea>
