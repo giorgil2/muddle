@@ -1,8 +1,11 @@
   <h2 class="xfolkentry">
     <a class="taggedlink" href="<%= post.url %>"><%= post.title %></a>
-  <%- if post.notes && !post.notes.empty? -%>
     <small class="description">
-      &mdash; <%= post.notes.gsub("\r", "<br/>") %>
+      &mdash; <%= post.description.gsub("\r", "<br/>") %>
     </small>
-  <%- end -%>
+    <%- unless post.tags.blank? -%>
+    <small class="tags">
+      (<%= post.tags.split(' ').collect {|tag| "<a rel=\"tag\" href=\"http://del.icio.us/tag/#{tag}/\">#{tag}</a>"}.join(' ') %>)
+    </small>
+    <%- end -%>
   </h2>
