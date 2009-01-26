@@ -48,7 +48,7 @@ class Posts < Application
 
   def index
     provides :atom
-    options = { :count => PER_PAGE, :descending => true }
+    options = { :descending => true, :limit => PER_PAGE }
     if params[:after]
       options.merge!({ :startkey => params[:after], :skip => 1 })
     elsif params[:before]
