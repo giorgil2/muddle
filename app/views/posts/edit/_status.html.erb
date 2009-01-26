@@ -1,2 +1,8 @@
     <label for="status[status]" class="required">Status</label>
     <textarea id="status[status]" name="status[status]"><%= post.status if post.attributes.include?(:status) %></textarea>
+
+    <label for="twitter_username" class="optional">Twitter username</label>
+    <input type="text" name="twitter_username" value="" />
+
+    <label for="twitter_password" class="optional">Twitter password</label>
+    <input type="password" name="twitter_password" value="" />
