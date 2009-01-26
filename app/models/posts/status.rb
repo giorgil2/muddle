@@ -5,7 +5,7 @@ class Status < Post
 
   def send_to_twitter(username, password)
     return unless self.valid?
-    request = Net::HTTP::Post.new('/statuses/update.json', {})
+    request = Net::HTTP::Post.new('/statuses/update.json', { 'User-Agent' => 'muddle' })
     request.basic_auth(username, password)
     request.set_form_data({ :status => self.status})
     response, data = Net::HTTP.new('twitter.com', 80).start {|http| http.request(request)}
