@@ -5,7 +5,7 @@
 
 class Posts < Application
 
-  before :ensure_authenticated, :exclude => [:index, :show]
+  before :ensure_authenticated, :exclude => [:attachment, :index, :show]
 
   log_params_filtered :delicious_password, :twitter_password
 
