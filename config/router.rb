@@ -29,7 +29,9 @@ Merb::Router.prepare do
 
   # RESTful routes
   # r.resources :posts
-  resources :posts
+  resources :posts do
+    match('/attachment').to(:action => 'attachment').name(:attachment)
+  end
 
   # This is the default route for /:controller/:action/:id
   # This is fine for most cases.  If you're heavily using resource-based

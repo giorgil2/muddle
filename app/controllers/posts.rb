@@ -86,4 +86,19 @@ class Posts < Application
     end
   end
 
+  def attachment
+    @post = Post.get!(params[:post_id])
+    return unless @post.attachments
+    file = open("http://localhost:5984/#{repository(:couch).adapter.escaped_db_name}/#{@post.id}/#{@post.attachment_name}")
+    stream_file({
+      :content_length => @post.attachments[@post.attachment_name]['length'],
+      :filename => @post.name,
+      :type => @post.attachments[@post.attachment_name]['content_type']
+    }) do |response|
+      while(chunk = file.read(16384))
+        response.write(chunk)
+      end
+    end
+  end
+
 end

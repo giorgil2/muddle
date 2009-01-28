@@ -10,7 +10,7 @@
     so_<%= post.id %>.addParam('allowfullscreen','true');
     so_<%= post.id %>.addParam('allowscriptaccess','always');
     so_<%= post.id %>.addParam('wmode','opaque');
-    so_<%= post.id %>.addParam('flashvars', '&file=<%= attachment_url_for(post) %>&type=video&backcolor=000000&frontcolor=666666&lightcolor=999999&screencolor=222222');
+    so_<%= post.id %>.addParam('flashvars', '&file=<%= url(:post_attachment, post) %>&type=video&backcolor=000000&frontcolor=666666&lightcolor=999999&screencolor=222222');
     so_<%= post.id %>.write('<%= post.id %>_player');
   </script>
 <%- end -%>
