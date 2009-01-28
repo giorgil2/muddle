@@ -222,3 +222,18 @@ ul.navigation li {
 div.footer {
 	margin: 20px auto;
 }
+
+div.footer img {
+	padding-bottom: 3px;
+	margin-right: 2px;
+	vertical-align: bottom;
+}
+
+div.footer a.mailto {
+	background-color: #000;
+	border: 1px solid #FFF;
+	color: #FFF;
+	font-family: monospace;
+	font-size: 0.75em;
+	padding: 0 3px;
+}
