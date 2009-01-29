@@ -6,3 +6,6 @@
 
     <label for="code[description]" class="optional">Description</label>
     <textarea id="code[description]" name="code[description]"><%= post.description if post.attributes.include?(:description) %></textarea>
+    
+    <label for="gist_filename" class="optional">Gist filename</label>
+    <input type="text" id="gist_filename" name ="gist_filename">
