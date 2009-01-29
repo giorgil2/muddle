@@ -1,5 +1,15 @@
 module Merb
   module GlobalHelpers
-    # helpers defined here available to all views.  
+
+    if File.exists?(File.join(Merb.root, '..', 'shared', 'analytics'))
+      def analytics
+        File.read(File.join(Merb.root, '..', 'shared', 'analytics')).rstrip
+      end
+    else
+      def analytics
+        ''
+      end
+    end
+
   end
 end
