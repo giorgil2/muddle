@@ -9,6 +9,11 @@ class Post
     self.couchdb_type.name.downcase
   end
 
+  # Used by particular services to send contents to other services
+  def send_to(params)
+    nil
+  end
+
   def self.default_repository_name
     :couch
   end

@@ -12,8 +12,10 @@ class Link < Post
     end
   end
 
-  def send_to_delicious(username, password)
-    return unless self.valid?
+  # del.icio.us
+  def send_to(params)
+    return if params[:delicious_username].blank? || params[:delicious_password].blank?
+    username, password = params[:delicious_username], params[:delicious_password]
     http = Net::HTTP.new('api.del.icio.us', 443)
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE

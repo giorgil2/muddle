@@ -16,18 +16,8 @@ class Posts < Application
     @file = params[type].delete(:file)
     @post = Object.const_get(:"#{params[:type]}").new(params[type])
     @post.name = @file['filename'] if @file && !@file.empty?
-
-    # Send link to del.icio.us if we have credentials
-    if !params[:delicious_username].blank? && !params[:delicious_password].blank?
-      @post.send_to_delicious(params[:delicious_username], params[:delicious_password])
-    end
-
-    # Send status to twitter if we have credentials
-    if !params[:twitter_username].blank? && !params[:twitter_password].blank?
-      @post.send_to_twitter(params[:twitter_username], params[:twitter_password])
-    end
-
     if @post.save
+      @post.send_to(params)
       @post.add_attachment(@file['tempfile'], { :content_type => @file['content_type'], :name => @post.attachment_name }) if @file && !@file.empty?
       redirect(url(:post, @post.id), :message => {:notice => 'Post created' })
     else

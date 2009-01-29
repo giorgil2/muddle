@@ -3,8 +3,10 @@ class Status < Post
   property :status, String, { :length => 140, :nullable => false }
   property :url, String
 
-  def send_to_twitter(username, password)
-    return unless self.valid?
+  # Twitter
+  def send_to(params)
+    return if params[:twitter_username].blank? || params[:twitter_password].blank?
+    username, password = params[:twitter_username], params[:twitter_password]
     request = Net::HTTP::Post.new('/statuses/update.json', { 'User-Agent' => 'muddle' })
     request.basic_auth(username, password)
     request.set_form_data({ :status => self.status})
