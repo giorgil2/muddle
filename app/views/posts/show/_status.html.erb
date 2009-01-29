@@ -1,3 +1,6 @@
   <p>
     <%= post.status %>
+    <%- if post.url -%>
+      <a href="<%= post.url %>"><small>[tweet]</small></a>
+    <%- end -%>
   </p>

@@ -1,3 +1,5 @@
+# TODO: Syntax highlighting?
+
 class Code < Post
 
   property :title, String

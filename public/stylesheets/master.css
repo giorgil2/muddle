@@ -34,7 +34,7 @@ blockquote, input, label, p, pre, td, th, textarea, ul {
 	margin-bottom: 1.2857142857142858em;
 }
 label { margin: 0;}
-p.small {
+small {
 	margin: 0;
 	font-size: 0.8333333333333334em;
 	line-height: 1.8em;

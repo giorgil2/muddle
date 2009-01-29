@@ -1,9 +1,14 @@
-<%- if post.title && !post.title.empty? -%>
+<%- unless post.title.blank? -%>
   <h2><%= post.title %></h2>
 <%- end -%>
 
   <pre class="code"><code><%= post.code %></code></pre>
   
-<%- if post.description && !post.description.empty? -%>
-  <p><%= post.description.gsub("\r", "<br/>") %></p>
+<%- if !post.description.blank? || !post.url.blank? -%>
+  <p>
+    <%= post.description.gsub("\r", "<br/>") unless post.description.blank? %>
+    <%- unless post.url.blank? -%>
+    <a href="<%= post.url %>"><small>[gist]</small></a>
+    <%- end -%>
+  </p>
 <%- end -%>
