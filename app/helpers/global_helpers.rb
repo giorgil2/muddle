@@ -3,7 +3,7 @@ module Merb
 
     if File.exists?(File.join(Merb.root, '..', '..', 'shared', 'analytics'))
       def analytics
-        File.read(File.join(Merb.root, '..', '..', 'shared', 'analytics')).rstrip
+        @analytics ||= File.read(File.join(Merb.root, '..', '..', 'shared', 'analytics')).rstrip
       end
     else
       def analytics
