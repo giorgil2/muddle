@@ -12,7 +12,7 @@ class Status < Post
     request.set_form_data({ :status => self.status})
     response, data = Net::HTTP.new('twitter.com', 80).start {|http| http.request(request)}
     data = JSON.parse(data)
-    self.url = "http://twitter.com/#{username}/status/#{data['id']}"
+    self.update_attributes(:url => "http://twitter.com/#{username}/status/#{data['id']}")
   end
 
 end

@@ -20,6 +20,6 @@ class Code < Post
       'token' => `git config --global github.token`.strip
     })
     response, data = http.start {|http| http.request(request)}
-    self.url = response['location']
+    self.update_attributes(:url => response['location'])
   end
 end
