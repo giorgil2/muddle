@@ -1,7 +1,7 @@
 class Link < Post
 
-  property :url, String, { :nullable => false }
-  property :title, String, { :nullable => false }
+  property :url, String, { :length => 512, :nullable => false }
+  property :title, String, { :length => 512, :nullable => false }
   property :description, Text, { :lazy => false, :nullable => false }
   property :tags, String
 
